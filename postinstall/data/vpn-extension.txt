@@ -1,0 +1,5 @@
+# custom properties added during OS setup
+up /etc/openvpn/update-systemd-resolved
+down /etc/openvpn/update-systemd-resolved
+down-pre
+dhcp-option DOMAIN-ROUTE .
