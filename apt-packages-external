@@ -5,3 +5,6 @@ teams
 ulauncher
 peek
 guake
+xclip
+autokey-gtk
+python3-pip

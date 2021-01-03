@@ -9,6 +9,9 @@ sudo apt upgrade -y
 # install all standard linux packages
 while read package; do sudo apt install -y "$package" || exit -1; done <apt-packages
 
+# TODO: THIS SHOULD NOT BE REQUIRED IF THE KEY IS ADDED CORRECTLY IN THE WHILE LOOP
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
 # add gpg keys for different repos
 while read url; do curl -fsSL "$url" | sudo apt-key add - || exit -1; done <apt-repo-keys-external
 # add 3rd party apt repositories
@@ -26,19 +29,19 @@ for file in $(pwd)/custom-installs/*.sh; do
     bash "$file" -H || exit -1
 done
 
-# execute scripts to customize the installations
-for file in $(pwd)/postinstall/*.sh; do
-    bash "$file" -H || exit -1
-done
-
 # add symlinks to home files
 # TODO: SYMLINK ALL FILES IN FOLDER WITHOUT SPECIFYING ALL NAMES
 ln -s $(pwd)/home-files/.editorconfig $HOME/.editorconfig
 ln -s $(pwd)/home-files/.gitconfig $HOME/.gitconfig
 ln -s $(pwd)/home-files/.zshaliases.sh $HOME/.zshaliases
 ln -s $(pwd)/home-files/.zshenv.sh $HOME/.zshenv
-ln -s $(pwd)/home-files/.zshrc.sh $HOME/.zshrc
+ln -sf $(pwd)/home-files/.zshrc.sh $HOME/.zshrc
 ln -s $(pwd)/home-files/config $HOME/.ssh/config
+
+# execute scripts to customize the installations
+for file in $(pwd)/postinstall/*.sh; do
+    bash "$file" -H || exit -1
+done
 
 # clean up package manager stuff
 sudo apt autoremove -y

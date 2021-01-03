@@ -10,12 +10,8 @@ python3
 zsh
 cifs-utils
 openjdk-11-jdk
-openjdk-8-jdk
 net-tools
 snapd
 vim
-xclip
 openvpn
-autokey-gtk
 unzip
-python3-pip
