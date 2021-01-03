@@ -1,21 +1,25 @@
+#!/usr/bin/env bash
+
+set -e
+
 # get latest remote repository info
 sudo apt update
 # update existing packages
-sudo apt upgrade
+sudo apt upgrade -y
 # install all standard linux packages
-while read package; do sudo apt install -y "$package"; done <apt-packages
+while read package; do sudo apt install -y "$package" || exit -1; done <apt-packages
 
 # add gpg keys for different repos
-while read url; do curl -fsSL "$url" | sudo apt-key add -; done <apt-repo-keys-external
+while read url; do curl -fsSL "$url" | sudo apt-key add - || exit -1; done <apt-repo-keys-external
 # add 3rd party apt repositories
-while read repo; do sudo add-apt-repository "$repo"; done <apt-repositories-external
+while read repo; do sudo add-apt-repository "$repo" || exit -1; done <apt-repositories-external
 # add apt packages from 3rd party repositories
-while read package; do sudo apt install -y "$package"; done <apt-packages-external
+while read package; do sudo apt install -y "$package" || exit -1; done <apt-packages-external
 
 # add snap packages
-while read package; do sudo snap install "$package"; done <snap-packages
+while read package; do sudo snap install "$package" || exit -1; done <snap-packages
 # add classic snap packages
-while read package; do sudo snap install "$package" --classic; done <snap-packages
+while read package; do sudo snap install "$package" --classic || exit -1; done <snap-packages
 
 # execute custom installations (not provided via default package managers)
 for file in $(pwd)/custom-installs/*.sh; do
@@ -35,3 +39,6 @@ ln -s $(pwd)/home-files/.zshaliases.sh $HOME/.zshaliases
 ln -s $(pwd)/home-files/.zshenv.sh $HOME/.zshenv
 ln -s $(pwd)/home-files/.zshrc.sh $HOME/.zshrc
 ln -s $(pwd)/home-files/config $HOME/.ssh/config
+
+# clean up package manager stuff
+sudo apt autoremove -y

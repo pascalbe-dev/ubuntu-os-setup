@@ -6,10 +6,7 @@ gnupg-agent
 software-properties-common
 make
 g++
-maven
 python3
-python3-pip
-guake
 zsh
 cifs-utils
 openjdk-11-jdk
@@ -21,3 +18,4 @@ xclip
 openvpn
 autokey-gtk
 unzip
+python3-pip
