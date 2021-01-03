@@ -1,7 +1,7 @@
 # zsh
 alias oms='vim ~/.zshaliases.sh'
 alias ome='vim ~/.zshenv'
-alias omc='code $HOME/os-setup'
+alias omc='code $HOME/ubuntu-os-setup'
 # reset shell (after changing aliases or stuff like that)
 alias res='exec zsh -l && clear'
 
