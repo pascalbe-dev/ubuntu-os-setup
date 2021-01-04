@@ -15,14 +15,14 @@ curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 # add gpg keys for different repos
 while read url; do curl -fsSL "$url" | sudo apt-key add - || exit -1; done <apt-repo-keys-external
 # add 3rd party apt repositories
-while read repo; do sudo add-apt-repository "$repo" || exit -1; done <apt-repositories-external
+while read repo; do sudo add-apt-repository -y "$repo" || exit -1; done <apt-repositories-external
 # add apt packages from 3rd party repositories
 while read package; do sudo apt install -y "$package" || exit -1; done <apt-packages-external
 
 # add snap packages
 while read package; do sudo snap install "$package" || exit -1; done <snap-packages
 # add classic snap packages
-while read package; do sudo snap install "$package" --classic || exit -1; done <snap-packages
+while read package; do sudo snap install "$package" --classic || exit -1; done <snap-packages-classic
 
 # execute custom installations (not provided via default package managers)
 for file in $(pwd)/custom-installs/*.sh; do
