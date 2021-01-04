@@ -38,6 +38,11 @@ ln -s $(pwd)/home-files/.zshenv.sh $HOME/.zshenv
 ln -sf $(pwd)/home-files/.zshrc.sh $HOME/.zshrc
 ln -s $(pwd)/home-files/config $HOME/.ssh/config
 
+# add symlinks to autostart apps
+ln -s $(pwd)/autostart/autokey.desktop $HOME/.config/autostart/autokey.desktop
+ln -s $(pwd)/autostart/guake.desktop $HOME/.config/autostart/guake.desktop
+ln -s $(pwd)/autostart/ulauncher.desktop $HOME/.config/autostart/ulauncher.desktop
+
 # execute scripts to customize the installations
 for file in $(pwd)/postinstall/*.sh; do
     bash "$file" -H || exit -1

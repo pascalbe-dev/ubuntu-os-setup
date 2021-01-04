@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=autokey
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Autokey
+Name=Autokey
+Comment[en_US]=Text Snippet Expander
+Comment=Text Snippet Expander
