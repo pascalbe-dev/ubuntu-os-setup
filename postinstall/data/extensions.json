@@ -1,1 +1,72 @@
-{}
+{
+    "com.github.ulauncher.ulauncher-timer": {
+        "id": "com.github.ulauncher.ulauncher-timer",
+        "url": "https://github.com/ulauncher/ulauncher-timer",
+        "updated_at": "2021-01-04T13:31:59.469483",
+        "last_commit": "4262fc24db08610d01ea311d2e12f22588c98886",
+        "last_commit_time": "2020-11-03T07:21:30"
+    },
+    "com.github.isacikgoz.ukill": {
+        "id": "com.github.isacikgoz.ukill",
+        "url": "https://github.com/isacikgoz/ukill",
+        "updated_at": "2021-01-04T13:32:19.239495",
+        "last_commit": "bc50d9f41d46b6813a5aeebddd15734dcdb9d8db",
+        "last_commit_time": "2019-05-28T18:30:00"
+    },
+    "com.github.manahter.ulauncher-translate": {
+        "id": "com.github.manahter.ulauncher-translate",
+        "url": "https://github.com/manahter/ulauncher-translate",
+        "updated_at": "2021-01-04T13:32:36.478380",
+        "last_commit": "38cf20f4621704b26a1e866d066ccb6a2acac5f2",
+        "last_commit_time": "2020-11-21T21:26:56"
+    },
+    "com.github.ulauncher.ulauncher-emoji": {
+        "id": "com.github.ulauncher.ulauncher-emoji",
+        "url": "https://github.com/Ulauncher/ulauncher-emoji",
+        "updated_at": "2021-01-04T13:33:13.506652",
+        "last_commit": "d56b2c8106ab5fbc87b55f608a3bd75db23f2904",
+        "last_commit_time": "2020-10-03T19:10:03"
+    },
+    "com.github.brpaz.ulauncher-vscode-projects": {
+        "id": "com.github.brpaz.ulauncher-vscode-projects",
+        "url": "https://github.com/brpaz/ulauncher-vscode-projects",
+        "updated_at": "2021-01-04T13:33:02.231667",
+        "last_commit": "f1002ab82c1bf27587b83e29c8d0976f61e33fee",
+        "last_commit_time": "2020-12-25T09:37:56"
+    },
+    "com.github.brpaz.ulauncher-jetbrains": {
+        "id": "com.github.brpaz.ulauncher-jetbrains",
+        "url": "https://github.com/brpaz/ulauncher-jetbrains",
+        "updated_at": "2021-01-04T13:35:10.185150",
+        "last_commit": "0f107684801c0daacfceaefe15d08c6b17b58bfb",
+        "last_commit_time": "2020-11-15T13:48:18"
+    },
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2021-01-04T13:36:12.000364",
+        "last_commit": "9268d22afd93748821164e12f806b049533fc873",
+        "last_commit_time": "2020-12-08T21:03:45"
+    },
+    "com.github.nortmas.chrome-bookmarks": {
+        "id": "com.github.nortmas.chrome-bookmarks",
+        "url": "https://github.com/nortmas/Chrome-bookmarks",
+        "updated_at": "2021-01-04T13:36:34.262314",
+        "last_commit": "59f6a8988fdb312852a0a8ce42d6f287f9a70da1",
+        "last_commit_time": "2020-12-08T14:36:05"
+    },
+    "com.github.ceroprogramming.ulauncher-pulsecontrol": {
+        "id": "com.github.ceroprogramming.ulauncher-pulsecontrol",
+        "url": "https://github.com/CeroProgramming/ulauncher-pulsecontrol",
+        "updated_at": "2021-01-04T13:39:16.208245",
+        "last_commit": "764a8b11202ce55dd574fec10ab447601958ed29",
+        "last_commit_time": "2020-11-27T15:56:19"
+    },
+    "com.github.friday.ulauncher-gnome-settings": {
+        "id": "com.github.friday.ulauncher-gnome-settings",
+        "url": "https://github.com/friday/ulauncher-gnome-settings",
+        "updated_at": "2021-01-04T13:46:24.986235",
+        "last_commit": "12281ba540740ed3f47cf1d49bcfc506ea78fbd1",
+        "last_commit_time": "2019-05-09T21:44:58"
+    }
+}
