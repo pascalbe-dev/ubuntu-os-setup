@@ -45,7 +45,7 @@ alias lgo='gnome-session-quit'
 alias nelpo='netstat -tulpn'
 alias neltr='netstat -nputw'
 alias nerpo='nc -vz '
-alias vps='sudo openvpn --config /etc/openvpn/work.vpn'
+alias vps='sudo openvpn --config $HOME/Documents/work.vpn'
 alias nee='nmcli radio wifi off && sudo ifconfig enp0s31f6 up'
 alias new='nmcli radio wifi on && sudo ifconfig enp0s31f6 down'
 
