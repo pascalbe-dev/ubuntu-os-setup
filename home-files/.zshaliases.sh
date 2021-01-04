@@ -1,7 +1,7 @@
 # zsh
 alias oms='vim ~/.zshaliases.sh'
 alias ome='vim ~/.zshenv'
-alias omc='code $HOME/ubuntu-os-setup'
+alias omc='code-insiders $HOME/ubuntu-os-setup'
 # reset shell (after changing aliases or stuff like that)
 alias res='exec zsh -l && clear'
 
@@ -134,7 +134,7 @@ alias mvdst='mvn deploy -DskipTests'
 alias mvf='mvn com.coveo:fmt-maven-plugin:format'
 alias mvsr='mvn spring-boot:run'
 alias mvdt='mvn dependency:tree'
-alias mves='code $HOME/.m2/settings.xml'
+alias mves='code-insiders $HOME/.m2/settings.xml'
 
 # java
 alias jjh='java -jar target/*.jar'
