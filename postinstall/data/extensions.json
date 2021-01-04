@@ -48,13 +48,6 @@
         "last_commit": "9268d22afd93748821164e12f806b049533fc873",
         "last_commit_time": "2020-12-08T21:03:45"
     },
-    "com.github.nortmas.chrome-bookmarks": {
-        "id": "com.github.nortmas.chrome-bookmarks",
-        "url": "https://github.com/nortmas/Chrome-bookmarks",
-        "updated_at": "2021-01-04T13:36:34.262314",
-        "last_commit": "59f6a8988fdb312852a0a8ce42d6f287f9a70da1",
-        "last_commit_time": "2020-12-08T14:36:05"
-    },
     "com.github.ceroprogramming.ulauncher-pulsecontrol": {
         "id": "com.github.ceroprogramming.ulauncher-pulsecontrol",
         "url": "https://github.com/CeroProgramming/ulauncher-pulsecontrol",
