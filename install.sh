@@ -36,7 +36,6 @@ ln -s $(pwd)/home-files/.gitconfig $HOME/.gitconfig
 ln -s $(pwd)/home-files/.zshaliases.sh $HOME/.zshaliases
 ln -s $(pwd)/home-files/.zshenv.sh $HOME/.zshenv
 ln -sf $(pwd)/home-files/.zshrc.sh $HOME/.zshrc
-ln -s $(pwd)/home-files/config $HOME/.ssh/config
 
 # add symlinks to autostart apps
 ln -s $(pwd)/autostart/autokey.desktop $HOME/.config/autostart/autokey.desktop
