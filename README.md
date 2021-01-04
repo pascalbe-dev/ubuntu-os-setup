@@ -22,3 +22,7 @@
 `./install.sh`
 
 4. Log out and back in again
+
+## Todos after the installation
+
+* tbd...
