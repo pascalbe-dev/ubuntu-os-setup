@@ -15,3 +15,5 @@ snapd
 vim
 openvpn
 unzip
+jq
+inotify-tools
