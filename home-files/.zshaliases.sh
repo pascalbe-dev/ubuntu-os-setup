@@ -1,5 +1,5 @@
 # zsh
-alias oms='vim ~/.zshaliases.sh'
+alias oms='vim ~/.zshaliases'
 alias ome='vim ~/.zshenv'
 alias omc='code-insiders $HOME/ubuntu-os-setup'
 # reset shell (after changing aliases or stuff like that)
@@ -148,6 +148,7 @@ alias nci='npm ci'
 alias nin='npm install '
 alias nind='npm install --save-dev '
 alias ning='npm install -g '
+alias nru='npm run '
 alias nst='npm run start'
 alias nsto='npm run start -- --open'
 alias nco='npm run commit'
