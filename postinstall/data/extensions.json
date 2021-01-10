@@ -27,20 +27,6 @@
         "last_commit": "d56b2c8106ab5fbc87b55f608a3bd75db23f2904",
         "last_commit_time": "2020-10-03T19:10:03"
     },
-    "com.github.brpaz.ulauncher-vscode-projects": {
-        "id": "com.github.brpaz.ulauncher-vscode-projects",
-        "url": "https://github.com/brpaz/ulauncher-vscode-projects",
-        "updated_at": "2021-01-04T13:33:02.231667",
-        "last_commit": "f1002ab82c1bf27587b83e29c8d0976f61e33fee",
-        "last_commit_time": "2020-12-25T09:37:56"
-    },
-    "com.github.brpaz.ulauncher-jetbrains": {
-        "id": "com.github.brpaz.ulauncher-jetbrains",
-        "url": "https://github.com/brpaz/ulauncher-jetbrains",
-        "updated_at": "2021-01-04T13:35:10.185150",
-        "last_commit": "0f107684801c0daacfceaefe15d08c6b17b58bfb",
-        "last_commit_time": "2020-11-15T13:48:18"
-    },
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
