@@ -222,7 +222,7 @@ alias -g A='| xargs -L 1 '
 alias -s {pdf,PDF,mp4,MP4,html,HTML,gif,GIF}='background google-chrome'
 alias -s {jpg,JPG,jpeg,JPEG,png,PNG}='background eog'
 alias -s {zip,ZIP,war,WAR,ear,EAR,jar,JAR}='unzip -l'
-alias -s {xlsx,XLSX,docx,DOCX}='background libreoffice'
+alias -s {xlsx,XLSX,docx,DOCX,csv,CSV}='background libreoffice'
 
 background() {
     $@ >/dev/null 2>/dev/null &
