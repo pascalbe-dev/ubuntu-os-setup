@@ -47,5 +47,12 @@
         "updated_at": "2021-01-04T13:46:24.986235",
         "last_commit": "12281ba540740ed3f47cf1d49bcfc506ea78fbd1",
         "last_commit_time": "2019-05-09T21:44:58"
+    },
+    "com.github.fsevenm.ulauncher-uuid": {
+        "id": "com.github.fsevenm.ulauncher-uuid",
+        "url": "https://github.com/fsevenm/ulauncher-uuid",
+        "updated_at": "2021-01-14T08:23:23.968416",
+        "last_commit": "2fbb70fd2af246277b2baff03465bc8bd971c85f",
+        "last_commit_time": "2021-01-14T04:26:08"
     }
 }
