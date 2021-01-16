@@ -60,6 +60,7 @@ alias gccl='git rev-parse HEAD'
 # bitbucket
 alias bpr1='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_1 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 alias bpr2='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_2 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
+alias bpr3='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_3 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 
 # UI (ubuntu)
 alias dils='xrandr -d :0 -q'
@@ -91,6 +92,8 @@ alias dcla='docker container ls -a'
 alias dil='docker image ls'
 alias dila='docker image ls -a'
 alias drm='docker rm '
+alias dst='docker stop '
+alias drs='docker restart '
 alias dex='docker exec -i -t '
 alias dpu='docker pull '
 alias dlo='docker logs -f '
