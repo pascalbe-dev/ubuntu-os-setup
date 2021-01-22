@@ -29,6 +29,9 @@ for file in $(pwd)/custom-installs/*.sh; do
     bash "$file" -H || exit -1
 done
 
+# add folder for specific use cases
+mkdir -p tools
+
 # add symlinks to home files
 # TODO: SYMLINK ALL FILES IN FOLDER WITHOUT SPECIFYING ALL NAMES
 ln -s $(pwd)/home-files/.editorconfig $HOME/.editorconfig
