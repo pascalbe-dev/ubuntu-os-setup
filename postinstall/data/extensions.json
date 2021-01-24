@@ -54,5 +54,12 @@
         "updated_at": "2021-01-14T08:23:23.968416",
         "last_commit": "2fbb70fd2af246277b2baff03465bc8bd971c85f",
         "last_commit_time": "2021-01-14T04:26:08"
+    },
+    "com.github.cmuench.ulauncher-todoist": {
+        "id": "com.github.cmuench.ulauncher-todoist",
+        "url": "https://github.com/cmuench/ulauncher-todoist",
+        "updated_at": "2021-01-24T15:46:40.138616",
+        "last_commit": "6213699ce4af9c1955d66cdb3976d61bb8bcf9e6",
+        "last_commit_time": "2021-01-02T10:33:51"
     }
 }
