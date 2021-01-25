@@ -17,3 +17,4 @@ openvpn
 unzip
 jq
 inotify-tools
+htop
