@@ -10,6 +10,9 @@ sudo apt install -y r-base
 # install custom installer tool which the R team proposes
 sudo apt install -y gdebi-core
 
+# extra unix utility for the "car" r package
+sudo apt install -y libcurl4-openssl-dev
+
 # fetch and install r studio
 # TODO: DO NOT PIN THE VERSION -> USE LATEST
 wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.3.1093-amd64.deb -O rstudio.deb
