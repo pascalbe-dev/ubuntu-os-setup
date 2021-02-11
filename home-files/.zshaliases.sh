@@ -13,6 +13,7 @@ alias lc='l -1 | wc -l'
 alias rm='rm -rf'
 alias mkd='mkdir -p '
 alias t='touch '
+alias psa='ps aux | grep '
 # copy latest command to clipboard
 alias cpc='echo "!!" | xclip -sel clip'
 alias lfs='du -ah . | sort -rh'
