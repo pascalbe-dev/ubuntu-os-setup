@@ -75,12 +75,15 @@ alias kbg='kubectl get'
 # openshift
 alias -g oca='oc apply -f '
 alias -g ocd='oc delete -f '
-alias -g ocl='oc login'
+alias ocld="oc login $OPENSHIFT_CLUSTER_DEV"
+alias ocls="oc login $OPENSHIFT_CLUSTER_STAGE"
+alias ocli="oc login $OPENSHIFT_CLUSTER_INT"
+alias oclp="oc login $OPENSHIFT_CLUSTER_PROD"
 alias ocg='oc get all --selector '
 alias ocp='oc projects'
-alias ocpd="oc project $OPENSHIFT_1"
-alias ocpt="oc project $OPENSHIFT_2"
-alias ocpp="oc project $OPENSHIFT_3"
+alias ocpd="oc project $OPENSHIFT_NAMESPACE_DEV"
+alias ocps="oc project $OPENSHIFT_NAMESPACE_STAGE"
+alias ocpp="oc project $OPENSHIFT_NAMESPACE_PROD"
 
 # docker aliases
 alias dpr='docker container prune && docker images purge'
