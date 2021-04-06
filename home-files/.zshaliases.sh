@@ -23,6 +23,10 @@ alias fh='find . 2>/dev/null | grep '
 alias fch='grep  --color=auto --exclude-dir="**/target" --exclude-dir="**/node_modules" --exclude-dir="**/dist"  -R '
 # generate file with 5MB size
 alias gf='truncate -s 5M '
+# run a commmand multiple times
+alias t10='for t in {1..10}; do ""; done'
+alias t50='for t in {1..50}; do ""; done'
+
 
 # package installation
 alias ain='sudo apt install -y '
@@ -80,10 +84,18 @@ alias ocls="oc login $OPENSHIFT_CLUSTER_STAGE"
 alias ocli="oc login $OPENSHIFT_CLUSTER_INT"
 alias oclp="oc login $OPENSHIFT_CLUSTER_PROD"
 alias ocg='oc get all --selector '
+alias ocsh="oc rsh -c "
 alias ocp='oc projects'
-alias ocpd="oc project $OPENSHIFT_NAMESPACE_DEV"
-alias ocps="oc project $OPENSHIFT_NAMESPACE_STAGE"
-alias ocpp="oc project $OPENSHIFT_NAMESPACE_PROD"
+alias ocpd="oc project $OPENSHIFT_NAMESPACE_DEV_1"
+alias ocpd2="oc project $OPENSHIFT_NAMESPACE_DEV_2"
+alias ocpi="oc project $OPENSHIFT_NAMESPACE_INT_1"
+alias ocpi2="oc project $OPENSHIFT_NAMESPACE_INT_2"
+alias ocps="oc project $OPENSHIFT_NAMESPACE_STAGE_1"
+alias ocps2="oc project $OPENSHIFT_NAMESPACE_STAGE_2"
+alias ocpp="oc project $OPENSHIFT_NAMESPACE_PROD_1"
+alias ocpp2="oc project $OPENSHIFT_NAMESPACE_PROD_2"
+# for our stuff
+alias ocshf="oc rsh dc/filesystem-test bash"
 
 # docker aliases
 alias dpr='docker container prune && docker images purge'
@@ -95,7 +107,7 @@ alias dcl='docker container ls'
 alias dcla='docker container ls -a'
 alias dil='docker image ls'
 alias dila='docker image ls -a'
-alias drm='docker rm '
+alias drm='docker rm -f '
 alias dst='docker stop '
 alias drs='docker restart '
 alias dex='docker exec -i -t '
