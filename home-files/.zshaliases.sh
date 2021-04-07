@@ -161,6 +161,7 @@ alias mves='code-insiders $HOME/.m2/settings.xml'
 
 # java
 alias jjh='java -jar target/*.jar'
+alias adj='adjustJava '
 
 # node, npm
 alias nci='npm ci'
@@ -245,4 +246,14 @@ alias -s {xlsx,XLSX,docx,DOCX,csv,CSV}='background libreoffice'
 
 background() {
     $@ >/dev/null 2>/dev/null &
+}
+
+adjustJava() {
+    new_version=$1
+
+    # ask user to switch
+    sudo update-alternatives --config java
+
+    # adjust maven settings
+    ln -sf $HOME/.m2/settings-$new_version.xml $HOME/.m2/settings.xml
 }
