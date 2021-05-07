@@ -257,3 +257,4 @@ adjustJava() {
     # adjust maven settings
     ln -sf $HOME/.m2/settings-$new_version.xml $HOME/.m2/settings.xml
 }
+
