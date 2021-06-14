@@ -200,6 +200,7 @@ alias inc='background intellij-idea-ultimate .'
 # extracting
 alias zi='zip -r content.zip '
 alias uzz='unzip *.zip -d zip && cd zip && lfs'
+alias uzj='unzip *.jar -d jar && cd jar && lfs'
 alias uze='unzip *.ear -d ear && cd ear && lfs'
 alias uzw='unzip *.war -d war && cd war && lfs'
 alias uzr='unzip *.rar -d rar && cd rar && lfs'
