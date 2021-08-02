@@ -50,7 +50,7 @@ alias lgo='gnome-session-quit'
 alias nelpo='netstat -tulpn'
 alias neltr='netstat -nputw'
 alias nerpo='nc -vz '
-alias vps='sudo openvpn --config $HOME/Documents/work.vpn'
+alias vps='sudo openvpn --config $HOME/Documents/work.ovpn'
 alias nee='nmcli radio wifi off && sudo ifconfig enp0s31f6 up'
 alias new='nmcli radio wifi on && sudo ifconfig enp0s31f6 down'
 
@@ -66,6 +66,7 @@ alias gccl='git rev-parse HEAD'
 alias bpr1='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_1 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 alias bpr2='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_2 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 alias bpr3='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_3 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
+alias bpr4='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_4 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 
 # UI (ubuntu)
 alias dils='xrandr -d :0 -q'
