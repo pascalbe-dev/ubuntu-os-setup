@@ -80,10 +80,10 @@ alias kbg='kubectl get'
 # openshift
 alias -g oca='oc apply -f '
 alias -g ocd='oc delete -f '
-alias ocld="oc login $OPENSHIFT_CLUSTER_DEV"
-alias ocls="oc login $OPENSHIFT_CLUSTER_STAGE"
-alias ocli="oc login $OPENSHIFT_CLUSTER_INT"
-alias oclp="oc login $OPENSHIFT_CLUSTER_PROD"
+alias ocld="oc login $OPENSHIFT_CLUSTER_DEV -u $OPENSHIFT_USER"
+alias ocls="oc login $OPENSHIFT_CLUSTER_STAGE -u $OPENSHIFT_USER"
+alias ocli="oc login $OPENSHIFT_CLUSTER_INT -u $OPENSHIFT_USER"
+alias oclp="oc login $OPENSHIFT_CLUSTER_PROD -u $OPENSHIFT_USER"
 alias ocg='oc get all --selector '
 alias ocsh="oc rsh -c "
 alias ocp='oc projects'
@@ -259,4 +259,3 @@ adjustJava() {
     # adjust maven settings
     ln -sf $HOME/.m2/settings-$new_version.xml $HOME/.m2/settings.xml
 }
-
