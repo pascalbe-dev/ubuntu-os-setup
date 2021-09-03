@@ -68,6 +68,10 @@ alias bpr2='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_2 $(git 
 alias bpr3='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_3 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 alias bpr4='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_4 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 
+# github
+alias gpr1='github-pull-request.sh $GITHUB_USER_1 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
+alias gpr2='github-pull-request.sh $GITHUB_USER_2 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
+
 # UI (ubuntu)
 alias dils='xrandr -d :0 -q'
 alias dioff='xrandr --output HDMI-2 --off'
