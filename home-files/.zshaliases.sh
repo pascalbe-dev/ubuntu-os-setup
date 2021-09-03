@@ -1,7 +1,7 @@
 # zsh
 alias oms='vim ~/.zshaliases'
 alias ome='vim ~/.zshenv'
-alias omc='code-insiders $HOME/ubuntu-os-setup'
+alias omc="$COMMAND_VSCODE $HOME/ubuntu-os-setup"
 # reset shell (after changing aliases or stuff like that)
 alias res='exec zsh -l && clear'
 
@@ -158,7 +158,7 @@ alias mvdst='mvn deploy -DskipTests'
 alias mvf='mvn com.coveo:fmt-maven-plugin:format'
 alias mvsr='mvn spring-boot:run'
 alias mvdt='mvn dependency:tree'
-alias mves='code-insiders $HOME/.m2/settings.xml'
+alias mves="$COMMAND_VSCODE $HOME/.m2/settings.xml"
 
 # java
 alias jjh='java -jar target/*.jar'
@@ -194,9 +194,9 @@ alias nxdf='nx g @angular-architects/ddd:feature --domain '
 alias nxdd='nx g @angular-architects/ddd:domain '
 
 # open current directory in tools
-alias coc='background code-insiders .'
-alias fic='background xdg-open .'
-alias inc='background intellij-idea-ultimate .'
+alias coc="background $COMMAND_VSCODE ."
+alias fic="background $COMMAND_FINDER ."
+alias inc="background $COMMAND_INTELLIJ ."
 
 # extracting
 alias zi='zip -r content.zip '
