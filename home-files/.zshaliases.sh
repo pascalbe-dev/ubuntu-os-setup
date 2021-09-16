@@ -57,6 +57,7 @@ alias new='nmcli radio wifi on && sudo ifconfig enp0s31f6 down'
 # git
 # get current branch
 alias gbc='git branch | grep \* | cut -d " " -f2'
+alias gpf='git push --force'
 alias gcob='git checkout -t '
 # revert last commit commit
 alias grc='git reset HEAD~1'
@@ -91,14 +92,19 @@ alias oclp="oc login $OPENSHIFT_CLUSTER_PROD -u $OPENSHIFT_USER"
 alias ocg='oc get all --selector '
 alias ocsh="oc rsh -c "
 alias ocp='oc projects'
-alias ocpd="oc project $OPENSHIFT_NAMESPACE_DEV_1"
-alias ocpd2="oc project $OPENSHIFT_NAMESPACE_DEV_2"
-alias ocpi="oc project $OPENSHIFT_NAMESPACE_INT_1"
-alias ocpi2="oc project $OPENSHIFT_NAMESPACE_INT_2"
-alias ocps="oc project $OPENSHIFT_NAMESPACE_STAGE_1"
-alias ocps2="oc project $OPENSHIFT_NAMESPACE_STAGE_2"
-alias ocpp="oc project $OPENSHIFT_NAMESPACE_PROD_1"
-alias ocpp2="oc project $OPENSHIFT_NAMESPACE_PROD_2"
+# projects
+alias ocpd1="oc project dev-$OPENSHIFT_NAMESPACE_1"
+alias ocpd2="oc project dev-$OPENSHIFT_NAMESPACE_2"
+alias ocpd3="oc project dev-$OPENSHIFT_NAMESPACE_3"
+alias ocpi1="oc project int-$OPENSHIFT_NAMESPACE_1"
+alias ocpi2="oc project int-$OPENSHIFT_NAMESPACE_2"
+alias ocpi3="oc project int-$OPENSHIFT_NAMESPACE_3"
+alias ocps1="oc project stage-$OPENSHIFT_NAMESPACE_1"
+alias ocps2="oc project stage-$OPENSHIFT_NAMESPACE_2"
+alias ocps3="oc project stage-$OPENSHIFT_NAMESPACE_3"
+alias ocpp1="oc project prod-$OPENSHIFT_NAMESPACE_1"
+alias ocpp2="oc project prod-$OPENSHIFT_NAMESPACE_2"
+alias ocpp3="oc project prod-$OPENSHIFT_NAMESPACE_3"
 # for our stuff
 alias ocshf="oc rsh dc/filesystem-test bash"
 
