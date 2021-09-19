@@ -217,6 +217,9 @@ alias uzw='unzip *.war -d war && cd war && lfs'
 alias uzr='unzip *.rar -d rar && cd rar && lfs'
 alias uzt='mkdir -p tar && tar -xf *.tar -C tar && cd tar && lfs'
 
+# backup
+alias mkbak="cd $BACKUP_FOLDER; git push; $EJECT_DISK_COMMAND $BACKUP_DISK"
+
 # navigation
 alias -g did='$HOME/Downloads/'
 alias -g dir='$HOME/repos/'

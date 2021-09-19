@@ -21,3 +21,8 @@ export COMMAND_VSCODE="code-insiders"
 export COMMAND_FINDER="xdg-open"
 export COMMAND_INTELLIJ="idea"
 export COMMAND_BROWSER_OPEN="google-chrome --app-url"
+
+# backupping
+export BACKUP_FOLDER="$HOME/backup"
+export BACKUP_DISK="TODO"
+export EJECT_DISK_COMMAND="TODO"
