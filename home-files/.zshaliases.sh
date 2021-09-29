@@ -108,6 +108,13 @@ alias ocpp3="oc project prod-$OPENSHIFT_NAMESPACE_3"
 # for our stuff
 alias ocshf="oc rsh dc/filesystem-test bash"
 
+# helm
+alias heli='helm template init ./$HELM_CHARTNAME -f ./$HELM_CHARTNAME/values-$HELM_ENVNAME.yaml --output-dir ./rendered-configs'
+alias hede='helm upgrade $HELM_CHARTNAME ./$HELM_CHARTNAME -f ./$HELM_CHARTNAME/values-$HELM_ENVNAME.yaml -n $HELM_ENVNAME-$HELM_NAMESPACE'
+alias hesc='export HELM_CHARTNAME='
+alias hese='export HELM_ENVNAME='
+alias hesn='export HELM_NAMESPACE='
+
 # docker aliases
 alias dpr='docker container prune && docker images purge'
 alias dpra='docker system prune -f'
