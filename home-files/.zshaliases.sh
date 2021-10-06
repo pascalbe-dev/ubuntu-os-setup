@@ -26,6 +26,7 @@ alias gf='truncate -s 5M '
 # run a commmand multiple times
 alias t10='for t in {1..10}; do ""; done'
 alias t50='for t in {1..50}; do ""; done'
+alias eho='sudo vim /etc/hosts'
 
 
 # package installation
