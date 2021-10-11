@@ -182,6 +182,11 @@ alias mves="$COMMAND_VSCODE $HOME/.m2/settings.xml"
 alias jjh='java -jar target/*.jar'
 alias adj='adjustJava '
 
+# python
+alias ppe='source env/bin/activate'
+alias pte='ppe && pytest'
+alias pli="ppe && pylint ${PWD##*/}"
+
 # node, npm
 alias nci='npm ci'
 alias nin='npm install '
