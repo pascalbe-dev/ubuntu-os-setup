@@ -12,6 +12,8 @@ alias l='ls -trlah'
 alias lc='l -1 | wc -l'
 alias rm='rm -rf'
 alias mkd='mkdir -p '
+# get the complete path to a file
+alias rp='realpath '
 alias t='touch '
 alias psa='ps aux | grep '
 # copy latest command to clipboard
@@ -69,6 +71,7 @@ alias bpr1='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_1 $(git 
 alias bpr2='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_2 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 alias bpr3='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_3 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 alias bpr4='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_4 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
+alias bpr5='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_5 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 
 # github
 alias gpr1='github-pull-request.sh $GITHUB_USER_1 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
@@ -112,6 +115,8 @@ alias ocshf="oc rsh dc/filesystem-test bash"
 # helm
 alias heli='helm template init ./$HELM_CHARTNAME -f ./$HELM_CHARTNAME/values-$HELM_ENVNAME.yaml --output-dir ./rendered-configs'
 alias hede='helm upgrade $HELM_CHARTNAME ./$HELM_CHARTNAME -f ./$HELM_CHARTNAME/values-$HELM_ENVNAME.yaml -n $HELM_ENVNAME-$HELM_NAMESPACE'
+alias herb='helm rollback $HELM_CHARTNAME 0 -n $HELM_ENVNAME-$HELM_NAMESPACE'
+alias helr='helm list -n $HELM_ENVNAME-$HELM_NAMESPACE'
 alias hesc='export HELM_CHARTNAME='
 alias hese='export HELM_ENVNAME='
 alias hesn='export HELM_NAMESPACE='
@@ -183,15 +188,19 @@ alias jjh='java -jar target/*.jar'
 alias adj='adjustJava '
 
 # python
+alias pse='python3 -m venv env'
 alias ppe='source env/bin/activate'
+alias pin='pip3 install -r dev-requirements.txt'
 alias pte='ppe && pytest'
 alias pli="ppe && pylint ${PWD##*/}"
 
 # node, npm
 alias nci='npm ci'
 alias nin='npm install '
+alias nun='npm uninstall '
 alias nind='npm install --save-dev '
 alias ning='npm install -g '
+alias nung='npm uninstall -g '
 alias nru='npm run '
 alias nst='npm run start'
 alias nsto='npm run start -- --open'
@@ -265,6 +274,7 @@ alias -g W='--watch '
 alias -g NP='-- --prod '
 alias -g VB='--verbose '
 alias -g A='| xargs -L 1 '
+alias -g CU='| cut -d " " -f1'
 
 # suffix aliases
 alias -s {pdf,PDF,mp4,MP4,html,HTML,gif,GIF}='background google-chrome'
