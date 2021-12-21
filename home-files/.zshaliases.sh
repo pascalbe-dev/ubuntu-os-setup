@@ -180,6 +180,7 @@ alias mvcd='mvn clean deploy'
 alias mvdst='mvn deploy -DskipTests'
 alias mvf='mvn com.coveo:fmt-maven-plugin:format'
 alias mvsr='mvn spring-boot:run'
+alias mvsrl='mvn spring-boot:run -Dspring-boot.run.profiles=local'
 alias mvdt='mvn dependency:tree'
 alias mves="$COMMAND_VSCODE $HOME/.m2/settings.xml"
 
