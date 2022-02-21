@@ -65,6 +65,8 @@ alias gcob='git checkout -t '
 # revert last commit commit
 alias grc='git reset HEAD~1'
 alias gccl='git rev-parse HEAD'
+# special commits
+alias gvc='git add --all && git commit -m "version: use latest version"'
 
 # bitbucket
 alias bpr1='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_1 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
@@ -137,8 +139,8 @@ alias drs='docker restart '
 alias dex='docker exec -i -t '
 alias dpu='docker pull '
 alias dlo='docker logs -f '
-alias dvc='docker volume create --name '
-alias dvi='docker volume inspect '
+alias dvoc='docker volume create --name '
+alias dvoi='docker volume inspect '
 
 # docker run container for current directory image / container name
 alias dbc='docker build -t ${PWD##*/} .'
