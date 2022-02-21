@@ -4,7 +4,7 @@
 
 ### Requirements:
 
-- Ubuntu installation with Gnome (minimal installation is enough)
+- Ubuntu installation with Gnome and hard drive encryption (minimal installation is enough)
 - Git installed
 
 ### Steps
@@ -25,4 +25,4 @@
 
 ## Todos after the installation
 
-* tbd...
+- tbd...
