@@ -61,6 +61,7 @@ alias new='nmcli radio wifi on && sudo ifconfig enp0s31f6 down'
 # get current branch
 alias gbc='git branch | grep \* | cut -d " " -f2'
 alias gpf='git push --force'
+alias gcom='git add --all && git commit -m '
 alias gcob='git checkout -t '
 # revert last commit commit
 alias grc='git reset HEAD~1'
