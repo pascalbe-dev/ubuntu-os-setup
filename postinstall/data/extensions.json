@@ -75,5 +75,19 @@
         "updated_at": "2021-09-16T17:46:32.041096",
         "last_commit": "9a3682584893a7bee11bee43188ca03e47577567",
         "last_commit_time": "2020-06-19T12:32:51"
+    },
+    "com.github.pascalbe-dev.ulauncher-repo-opener": {
+        "id": "com.github.pascalbe-dev.ulauncher-repo-opener",
+        "url": "https://github.com/pascalbe-dev/ulauncher-repo-opener.git",
+        "updated_at": "2022-03-06T10:25:51.371089",
+        "last_commit": "006dae7b3b00e3c023a69b4b979a347b235b191a",
+        "last_commit_time": "2021-06-17T05:35:52"
+    },
+    "com.github.nortmas.chrome-bookmarks": {
+        "id": "com.github.nortmas.chrome-bookmarks",
+        "url": "https://github.com/nortmas/chrome-bookmarks.git",
+        "updated_at": "2022-03-06T10:26:28.173697",
+        "last_commit": "b4598ea1e208cd6feb49574e998721dcc771157f",
+        "last_commit_time": "2021-01-09T15:04:28"
     }
 }
