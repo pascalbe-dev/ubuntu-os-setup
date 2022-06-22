@@ -69,13 +69,6 @@ alias gccl='git rev-parse HEAD'
 # special commits
 alias gvc='git add --all && git commit -m "version: use latest version"'
 
-# bitbucket
-alias bpr1='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_1 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
-alias bpr2='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_2 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
-alias bpr3='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_3 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
-alias bpr4='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_4 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
-alias bpr5='bitbucket-pull-request.sh $BITBUCKET_URL $BITBUCKET_PROJECT_5 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
-
 # github
 alias gpr1='github-pull-request.sh $GITHUB_USER_1 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 alias gpr2='github-pull-request.sh $GITHUB_USER_2 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
@@ -88,41 +81,6 @@ alias dion='xrandr --output HDMI-2 --auto'
 # kubernetes
 alias kb='kubectl'
 alias kbg='kubectl get'
-
-# openshift
-alias -g oca='oc apply -f '
-alias -g ocd='oc delete -f '
-alias ocld="oc login $OPENSHIFT_CLUSTER_DEV -u $OPENSHIFT_USER"
-alias ocls="oc login $OPENSHIFT_CLUSTER_STAGE -u $OPENSHIFT_USER"
-alias ocli="oc login $OPENSHIFT_CLUSTER_INT -u $OPENSHIFT_USER"
-alias oclp="oc login $OPENSHIFT_CLUSTER_PROD -u $OPENSHIFT_USER"
-alias ocg='oc get all --selector '
-alias ocsh="oc rsh -c "
-alias ocp='oc projects'
-# projects
-alias ocpd1="oc project dev-$OPENSHIFT_NAMESPACE_1"
-alias ocpd2="oc project dev-$OPENSHIFT_NAMESPACE_2"
-alias ocpd3="oc project dev-$OPENSHIFT_NAMESPACE_3"
-alias ocpi1="oc project int-$OPENSHIFT_NAMESPACE_1"
-alias ocpi2="oc project int-$OPENSHIFT_NAMESPACE_2"
-alias ocpi3="oc project int-$OPENSHIFT_NAMESPACE_3"
-alias ocps1="oc project stage-$OPENSHIFT_NAMESPACE_1"
-alias ocps2="oc project stage-$OPENSHIFT_NAMESPACE_2"
-alias ocps3="oc project stage-$OPENSHIFT_NAMESPACE_3"
-alias ocpp1="oc project prod-$OPENSHIFT_NAMESPACE_1"
-alias ocpp2="oc project prod-$OPENSHIFT_NAMESPACE_2"
-alias ocpp3="oc project prod-$OPENSHIFT_NAMESPACE_3"
-# for our stuff
-alias ocshf="oc rsh dc/filesystem-test bash"
-
-# helm
-alias heli='helm template init ./$HELM_CHARTNAME -f ./$HELM_CHARTNAME/values-$HELM_ENVNAME.yaml --output-dir ./rendered-configs'
-alias hede='helm upgrade $HELM_CHARTNAME ./$HELM_CHARTNAME -f ./$HELM_CHARTNAME/values-$HELM_ENVNAME.yaml -n $HELM_ENVNAME-$HELM_NAMESPACE'
-alias herb='helm rollback $HELM_CHARTNAME 0 -n $HELM_ENVNAME-$HELM_NAMESPACE'
-alias helr='helm list -n $HELM_ENVNAME-$HELM_NAMESPACE'
-alias hesc='export HELM_CHARTNAME='
-alias hese='export HELM_ENVNAME='
-alias hesn='export HELM_NAMESPACE='
 
 # docker aliases
 alias dpr='docker container prune && docker images purge'
@@ -189,7 +147,6 @@ alias mves="$COMMAND_VSCODE $HOME/.m2/settings.xml"
 
 # java
 alias jjh='java -jar target/*.jar'
-alias adj='adjustJava '
 
 # python
 alias pse='python3 -m venv env'
@@ -243,9 +200,6 @@ alias uzw='unzip *.war -d war && cd war && lfs'
 alias uzr='unzip *.rar -d rar && cd rar && lfs'
 alias uzt='mkdir -p tar && tar -xf *.tar -C tar && cd tar && lfs'
 
-# backup
-alias mkbak="cd $BACKUP_FOLDER; git push; $EJECT_DISK_COMMAND $BACKUP_DISK"
-
 # navigation
 alias -g did='$HOME/Downloads/'
 alias -g dir='$HOME/repos/'
@@ -288,14 +242,4 @@ alias -s {xlsx,XLSX,docx,DOCX,csv,CSV}='background libreoffice'
 
 background() {
     $@ >/dev/null 2>/dev/null &
-}
-
-adjustJava() {
-    new_version=$1
-
-    # ask user to switch
-    sudo update-alternatives --config java
-
-    # adjust maven settings
-    ln -sf $HOME/.m2/settings-$new_version.xml $HOME/.m2/settings.xml
 }
