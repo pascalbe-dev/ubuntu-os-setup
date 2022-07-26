@@ -62,6 +62,7 @@ alias new='nmcli radio wifi on && sudo ifconfig enp0s31f6 down'
 alias gbc='git branch | grep \* | cut -d " " -f2'
 alias gpf='git push --force'
 alias gcom='git add --all && git commit -m '
+alias gcomd='git add --all && git commit -m "`date`"'
 alias gcob='git checkout -t '
 # revert last commit commit
 alias grc='git reset HEAD~1'
@@ -147,6 +148,8 @@ alias mves="$COMMAND_VSCODE $HOME/.m2/settings.xml"
 
 # java
 alias jjh='java -jar target/*.jar'
+alias je8='jenv global 1.8 && res'
+alias je11='jenv global 11.0 && res'
 
 # python
 alias pse='python3 -m venv env'
@@ -185,6 +188,7 @@ alias nxt='npm run affected:test'
 alias nxgr='nx dep-graph'
 alias nxdf='nx g @angular-architects/ddd:feature --domain '
 alias nxdd='nx g @angular-architects/ddd:domain '
+alias nxgc='nx g @schematics/angular:component --project '
 
 # open current directory in tools
 alias coc="background $COMMAND_VSCODE ."

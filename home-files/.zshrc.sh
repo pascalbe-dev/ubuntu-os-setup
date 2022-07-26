@@ -103,3 +103,7 @@ source $HOME/.zshaliases
 source $HOME/.zshenv
 
 PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}] '$PROMPT
+
+# JENV
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
