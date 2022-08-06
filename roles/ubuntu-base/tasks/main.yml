@@ -1,5 +1,5 @@
 ---
-- name: install command-line productivity utilities
+- name: install command-line productivity tools
   apt:
     name: "{{ item }}"
     update_cache: yes
@@ -10,12 +10,20 @@
     - vim
     - htop
     - xclip
-- name: install ui productivity utilities
+- name: install standard ui productivity tools
   apt:
     name: "{{ item }}"
   loop:
-    - ulauncher
     - guake
     - autokey-gtk
     - flameshot
     - peek
+- name: install ulauncher ui productivity tool
+  block:
+    - name: add apt repo
+      apt_repo:
+        repo: ppa:agornostal/ulauncher
+        update: yes
+    - name: run the ulauncher installation
+      apt:
+        name: ulauncher

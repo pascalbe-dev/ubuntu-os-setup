@@ -11,4 +11,4 @@ git clone https://github.com/pascalbe-dev/ubuntu-os-setup.git
 
 echo "Setting up the environment ..."
 cd ubuntu-os-setup
-ansible-playbook developer-ubuntu.yml
+ansible-playbook developer-ubuntu.yml --ask-become-pass
