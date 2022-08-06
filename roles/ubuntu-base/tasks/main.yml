@@ -1,9 +1,20 @@
 ---
+- name: add apt signing keys
+  apt_key:
+    url: "{{ item }}"
+  loop:
+    - https://dl.google.com/linux/linux_signing_key.pub
+- name: add apt repos
+  apt_repository:
+    repo: "{{ item }}"
+  loop:
+    - ppa:agornostal/ulauncher
+    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 - name: update packages cache
   apt:
     name: wget
     update_cache: yes
-- name: install command-line tools
+- name: install apt tools
   apt:
     name: "{{ item }}"
   loop:
@@ -15,16 +26,25 @@
     - htop
     - xclip
     - python3-pip
-- name: install standard ui tools
-  apt:
-    name: "{{ item }}"
-  loop:
+    - mlocate
     - guake
     - autokey-gtk
     - flameshot
+    - ulauncher
     - peek
     - dconf-editor
-- name: install other tools
+    - google-chrome-stable
+- name: install pip tools
+  pip:
+    name: "{{ item }}"
+  loop:
+    - todoist-python
+- name: install snap tools
+  community.general.snap:
+    name: "{{ item }}"
+  loop:
+    - spotify
+- name: custom install tools
   block:
     - name: install oh my zsh
       become: false
@@ -34,30 +54,6 @@
             curl -o- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
           args:
             creates: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/oh-my-zsh.sh"
-        - name: configure oh my zsh
-          block:
-            - name: add extra configuration files
-              copy:
-                src: "configuration/ohmyzsh/{{ item }}.sh"
-                dest: "{{ lookup('env', 'HOME') }}/{{ item }}"
-              loop:
-                - .zshenv
-                - .zshaliases
-                - .zshrc
-            - name: change zsh configuration
-              block:
-                - name: replace plugins
-                  lineinfile:
-                    path: "{{ lookup('env', 'HOME') }}/.zshrc"
-                    regexp: "^plugins=(.*)"
-                    line: plugins=(git globalias nvm)
-                - name: reference extra configuration files
-                  lineinfile:
-                    path: "{{ lookup('env', 'HOME') }}/.zshrc"
-                    line: "source $HOME/{{ item }}"
-                  loop:
-                    - .zshenv
-                    - .zshaliases
         - name: use the zsh as default shell
           become: true
           user:
@@ -65,31 +61,6 @@
             name: pascalbe
             shell: /bin/zsh
           notify: log out
-    - name: install ulauncher
-      block:
-        - name: add ulauncher apt repo
-          apt_repository:
-            repo: ppa:agornostal/ulauncher
-            update_cache: yes
-        - name: run the ulauncher installation
-          apt:
-            name: ulauncher
-        - name: install packages required for ulauncher extensions
-          block:
-            - name: install mlocate (for the chrome bookmarks extension)
-              apt:
-                name: mlocate
-            - name: install todoist-python (for the todoist extension)
-              pip:
-                name: todoist-python
-        - name: configure ulauncher
-          become: false
-          copy:
-            src: configuration/ulauncher/{{ item }}.json
-            dest: "{{ lookup('env', 'HOME') }}/.config/ulauncher/"
-          loop:
-            - settings
-            - extensions
 - name: autostart tools
   become: false
   copy:
@@ -105,7 +76,7 @@
     - name: install configuration requirements
       pip:
         name: psutil
-    - name: "run the configuration"
+    - name: run standard configurations
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -149,3 +120,34 @@
             key: "/apps/guake/keybindings/local/clipboard-paste",
             value: "'<Alt>v'",
           }
+    - name: configure ulauncher
+      copy:
+        src: configuration/ulauncher/{{ item }}.json
+        dest: "{{ lookup('env', 'HOME') }}/.config/ulauncher/"
+      loop:
+        - settings
+        - extensions
+    - name: configure oh my zsh
+      block:
+        - name: add extra configuration files
+          copy:
+            src: "configuration/ohmyzsh/{{ item }}.sh"
+            dest: "{{ lookup('env', 'HOME') }}/{{ item }}"
+          loop:
+            - .zshenv
+            - .zshaliases
+            - .zshrc
+        - name: change zsh configuration
+          block:
+            - name: replace plugins
+              lineinfile:
+                path: "{{ lookup('env', 'HOME') }}/.zshrc"
+                regexp: "^plugins=(.*)"
+                line: plugins=(git globalias nvm)
+            - name: reference extra configuration files
+              lineinfile:
+                path: "{{ lookup('env', 'HOME') }}/.zshrc"
+                line: "source $HOME/{{ item }}"
+              loop:
+                - .zshenv
+                - .zshaliases
