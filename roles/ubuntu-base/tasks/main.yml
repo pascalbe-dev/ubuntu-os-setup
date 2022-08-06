@@ -49,6 +49,13 @@
             - .zshenv
             - .zshaliases
             - .zshrc
+        - name: use the zsh as default shell
+          become: true
+          user:
+            # TODO: do not hardcode the username
+            name: pascalbe
+            shell: /bin/zsh
+          notify: log out
     - name: install ulauncher
       block:
         - name: add ulauncher apt repo
