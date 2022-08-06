@@ -22,6 +22,7 @@
     - autokey-gtk
     - flameshot
     - peek
+    - dconf-editor
 - name: install ulauncher ui productivity tool
   block:
     - name: add ulauncher apt repo
@@ -56,3 +57,52 @@
     - autokey
     - guake
     - ulauncher
+- name: install requirements for dconf configurations via ansible
+  pip:
+    name: psutil
+- name: configure productivity tools
+  become: false
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  # TODO: move this to a separate location for better readability
+  with_items:
+    - { key: "/apps/guake/general/window-height", value: "35" }
+    - {
+        key: "/apps/guake/style/font/palette",
+        value: "'#1C1C1D1D1919:#D0D01B1B2424:#A7A7D3D32C2C:#D8D8CFCF6767:#6161B8B8D0D0:#69695A5ABBBB:#D5D538386464:#FEFEFFFFFEFE:#1C1C1D1D1919:#D0D01B1B2424:#A7A7D3D32C2C:#D8D8CFCF6767:#6161B8B8D0D0:#69695A5ABBBB:#D5D538386464:#FEFEFFFFFEFE:#F6F6F5F5EEEE:#232325252626'",
+      }
+    - { key: "/apps/guake/style/font/palette-name", value: "'Monokai'" }
+    - { key: "/apps/guake/style/background/transparency", value: "90" }
+    - { key: "/apps/guake/keybindings/global/show-hide", value: "'F10'" }
+    - { key: "/apps/guake/keybindings/local/new-tab", value: "'<Alt>t'" }
+    - { key: "/apps/guake/keybindings/local/close-tab", value: "'<Alt>w'" }
+    - {
+        key: "/apps/guake/keybindings/local/previous-tab",
+        value: "'<Alt>Left'",
+      }
+    - { key: "/apps/guake/keybindings/local/next-tab", value: "'<Alt>Right'" }
+    - {
+        key: "/apps/guake/keybindings/local/rename-current-tab",
+        value: "'<Alt>r'",
+      }
+    - { key: "/apps/guake/keybindings/local/clipboard-copy", value: "'<Alt>c'" }
+    - {
+        key: "/apps/guake/keybindings/local/clipboard-paste",
+        value: "'<Alt>v'",
+      }
+- name: configure ubuntu and gnome
+  become: false
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  # TODO: move this to a separate location for better readability
+  with_items:
+    - {
+        key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size",
+        value: "30",
+      }
+    - {
+        key: "/org/gnome/shell/extensions/dash-to-dock/dock-position",
+        value: "'BOTTOM'",
+      }
