@@ -4,15 +4,8 @@
     - name: install nvm
       become: false
       block:
-        - name: ensure the directory for the installer exists
-          file:
-            path: "{{ lookup('env', 'HOME') }}/.installers/nvm/"
-            state: directory
-        - name: download the installer
-          get_url:
-            url: https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh
-            dest: "{{ lookup('env', 'HOME') }}/.installers/nvm/"
-          register: nvm_installer
         - name: run the nvm installation
-          shell: "bash {{ lookup('env', 'HOME') }}/.installers/nvm/install.sh"
-          when: nvm_installer.changed
+          shell: >
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+          args:
+            creates: "{{ lookup('env', 'HOME') }}/.nvm/nvm.sh"

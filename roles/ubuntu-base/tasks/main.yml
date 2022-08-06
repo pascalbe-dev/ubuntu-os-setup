@@ -42,13 +42,29 @@
           shell: "bash {{ lookup('env', 'HOME') }}/.installers/ohmyzsh/install.sh"
           when: ohmyzsh_installer.changed
         - name: configure oh my zsh
-          copy:
-            src: "configuration/ohmyzsh/{{ item }}.sh"
-            dest: "{{ lookup('env', 'HOME') }}/{{ item }}"
-          loop:
-            - .zshenv
-            - .zshaliases
-            - .zshrc
+          block:
+            - name: add extra configuration files
+              copy:
+                src: "configuration/ohmyzsh/{{ item }}.sh"
+                dest: "{{ lookup('env', 'HOME') }}/{{ item }}"
+              loop:
+                - .zshenv
+                - .zshaliases
+                - .zshrc
+            - name: change zsh configuration
+              block:
+                - name: replace plugins
+                  lineinfile:
+                    path: "{{ lookup('env', 'HOME') }}/.zshrc"
+                    regexp: "^plugins=(.*)"
+                    line: plugins=(git globalias nvm)
+                - name: reference extra configuration files
+                  lineinfile:
+                    path: "{{ lookup('env', 'HOME') }}/.zshrc"
+                    line: "source $HOME/{{ item }}"
+                  loop:
+                    - .zshenv
+                    - .zshaliases
         - name: use the zsh as default shell
           become: true
           user:
