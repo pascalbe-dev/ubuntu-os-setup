@@ -1,8 +1,11 @@
 ---
+- name: update packages cache
+  apt:
+    name: wget
+    update_cache: yes
 - name: install command-line productivity tools
   apt:
     name: "{{ item }}"
-    update_cache: yes
   loop:
     - jq
     - unzip
