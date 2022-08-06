@@ -3,10 +3,11 @@
   apt:
     name: wget
     update_cache: yes
-- name: install command-line productivity tools
+- name: install command-line tools
   apt:
     name: "{{ item }}"
   loop:
+    - zsh
     - jq
     - unzip
     - curl
@@ -14,7 +15,7 @@
     - htop
     - xclip
     - python3-pip
-- name: install standard ui productivity tools
+- name: install standard ui tools
   apt:
     name: "{{ item }}"
   loop:
@@ -23,32 +24,49 @@
     - flameshot
     - peek
     - dconf-editor
-- name: install ulauncher ui productivity tool
+- name: install other tools
   block:
-    - name: add ulauncher apt repo
-      apt_repository:
-        repo: ppa:agornostal/ulauncher
-        update_cache: yes
-    - name: run the ulauncher installation
-      apt:
-        name: ulauncher
-    - name: install packages required for ulauncher extensions
-      block:
-        - name: install mlocate (for the chrome bookmarks extension)
-          apt:
-            name: mlocate
-        - name: install todoist-python (for the todoist extension)
-          pip:
-            name: todoist-python
-    - name: configure ulauncher
+    - name: install oh my zsh
       become: false
-      copy:
-        src: configuration/ulauncher/{{ item }}.json
-        dest: "{{ lookup('env', 'HOME') }}/.config/ulauncher/"
-      loop:
-        - settings
-        - extensions
-- name: autostart productivity tools
+      block:
+        - name: ensure the directory for the installer exists
+          file:
+            path: "{{ lookup('env', 'HOME') }}/.installers/ohmyzsh/"
+            state: directory
+        - name: download the installer
+          get_url:
+            url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+            dest: "{{ lookup('env', 'HOME') }}/.installers/ohmyzsh/"
+          register: ohmyzsh_installer
+        - name: run the oh my zsh installation
+          shell: "bash {{ lookup('env', 'HOME') }}/.installers/ohmyzsh/install.sh"
+          when: ohmyzsh_installer.changed
+    - name: install ulauncher
+      block:
+        - name: add ulauncher apt repo
+          apt_repository:
+            repo: ppa:agornostal/ulauncher
+            update_cache: yes
+        - name: run the ulauncher installation
+          apt:
+            name: ulauncher
+        - name: install packages required for ulauncher extensions
+          block:
+            - name: install mlocate (for the chrome bookmarks extension)
+              apt:
+                name: mlocate
+            - name: install todoist-python (for the todoist extension)
+              pip:
+                name: todoist-python
+        - name: configure ulauncher
+          become: false
+          copy:
+            src: configuration/ulauncher/{{ item }}.json
+            dest: "{{ lookup('env', 'HOME') }}/.config/ulauncher/"
+          loop:
+            - settings
+            - extensions
+- name: autostart tools
   become: false
   copy:
     src: autostart/{{ item }}.desktop
@@ -57,52 +75,53 @@
     - autokey
     - guake
     - ulauncher
-- name: install requirements for dconf configurations via ansible
-  pip:
-    name: psutil
-- name: configure productivity tools
+- name: configure tools
   become: false
-  dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value }}"
-  # TODO: move this to a separate location for better readability
-  with_items:
-    - { key: "/apps/guake/general/window-height", value: "35" }
-    - {
-        key: "/apps/guake/style/font/palette",
-        value: "'#1C1C1D1D1919:#D0D01B1B2424:#A7A7D3D32C2C:#D8D8CFCF6767:#6161B8B8D0D0:#69695A5ABBBB:#D5D538386464:#FEFEFFFFFEFE:#1C1C1D1D1919:#D0D01B1B2424:#A7A7D3D32C2C:#D8D8CFCF6767:#6161B8B8D0D0:#69695A5ABBBB:#D5D538386464:#FEFEFFFFFEFE:#F6F6F5F5EEEE:#232325252626'",
-      }
-    - { key: "/apps/guake/style/font/palette-name", value: "'Monokai'" }
-    - { key: "/apps/guake/style/background/transparency", value: "90" }
-    - { key: "/apps/guake/keybindings/global/show-hide", value: "'F10'" }
-    - { key: "/apps/guake/keybindings/local/new-tab", value: "'<Alt>t'" }
-    - { key: "/apps/guake/keybindings/local/close-tab", value: "'<Alt>w'" }
-    - {
-        key: "/apps/guake/keybindings/local/previous-tab",
-        value: "'<Alt>Left'",
-      }
-    - { key: "/apps/guake/keybindings/local/next-tab", value: "'<Alt>Right'" }
-    - {
-        key: "/apps/guake/keybindings/local/rename-current-tab",
-        value: "'<Alt>r'",
-      }
-    - { key: "/apps/guake/keybindings/local/clipboard-copy", value: "'<Alt>c'" }
-    - {
-        key: "/apps/guake/keybindings/local/clipboard-paste",
-        value: "'<Alt>v'",
-      }
-- name: configure ubuntu and gnome
-  become: false
-  dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value }}"
-  # TODO: move this to a separate location for better readability
-  with_items:
-    - {
-        key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size",
-        value: "30",
-      }
-    - {
-        key: "/org/gnome/shell/extensions/dash-to-dock/dock-position",
-        value: "'BOTTOM'",
-      }
+  block:
+    - name: install configuration requirements
+      pip:
+        name: psutil
+    - name: "run the configuration"
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      # TODO: move this to a separate location for better readability
+      with_items:
+        - {
+            key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size",
+            value: "30",
+          }
+        - {
+            key: "/org/gnome/shell/extensions/dash-to-dock/dock-position",
+            value: "'BOTTOM'",
+          }
+        - { key: "/apps/guake/general/window-height", value: "35" }
+        - {
+            key: "/apps/guake/style/font/palette",
+            value: "'#1C1C1D1D1919:#D0D01B1B2424:#A7A7D3D32C2C:#D8D8CFCF6767:#6161B8B8D0D0:#69695A5ABBBB:#D5D538386464:#FEFEFFFFFEFE:#1C1C1D1D1919:#D0D01B1B2424:#A7A7D3D32C2C:#D8D8CFCF6767:#6161B8B8D0D0:#69695A5ABBBB:#D5D538386464:#FEFEFFFFFEFE:#F6F6F5F5EEEE:#232325252626'",
+          }
+        - { key: "/apps/guake/style/font/palette-name", value: "'Monokai'" }
+        - { key: "/apps/guake/style/background/transparency", value: "90" }
+        - { key: "/apps/guake/keybindings/global/show-hide", value: "'F10'" }
+        - { key: "/apps/guake/keybindings/local/new-tab", value: "'<Alt>t'" }
+        - { key: "/apps/guake/keybindings/local/close-tab", value: "'<Alt>w'" }
+        - {
+            key: "/apps/guake/keybindings/local/previous-tab",
+            value: "'<Alt>Left'",
+          }
+        - {
+            key: "/apps/guake/keybindings/local/next-tab",
+            value: "'<Alt>Right'",
+          }
+        - {
+            key: "/apps/guake/keybindings/local/rename-current-tab",
+            value: "'<Alt>r'",
+          }
+        - {
+            key: "/apps/guake/keybindings/local/clipboard-copy",
+            value: "'<Alt>c'",
+          }
+        - {
+            key: "/apps/guake/keybindings/local/clipboard-paste",
+            value: "'<Alt>v'",
+          }
