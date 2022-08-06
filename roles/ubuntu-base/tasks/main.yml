@@ -1,0 +1,21 @@
+---
+- name: install command-line productivity utilities
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  loop:
+    - jq
+    - unzip
+    - curl
+    - vim
+    - htop
+    - xclip
+- name: install ui productivity utilities
+  apt:
+    name: "{{ item }}"
+  loop:
+    - ulauncher
+    - guake
+    - autokey-gtk
+    - flameshot
+    - peek
