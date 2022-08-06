@@ -7,4 +7,4 @@ sudo apt install -y \
 
 
 echo "Downloading the repo to set up the environment..."
-git clone git@github.com:pascalbe-dev/ubuntu-os-setup.git
+git clone https://github.com/pascalbe-dev/ubuntu-os-setup.git
