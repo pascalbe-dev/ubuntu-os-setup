@@ -20,10 +20,18 @@
     - peek
 - name: install ulauncher ui productivity tool
   block:
-    - name: add apt repo
-      apt_repo:
+    - name: add ulauncher apt repo
+      apt_repository:
         repo: ppa:agornostal/ulauncher
-        update: yes
+        update_cache: yes
     - name: run the ulauncher installation
       apt:
         name: ulauncher
+- name: autostart productivity tools
+  copy:
+    src: autostart/{{ item }}.desktop
+    dest: /home/pascalbe/autostart/
+  loop:
+    - autokey
+    - guake
+    - ulauncher

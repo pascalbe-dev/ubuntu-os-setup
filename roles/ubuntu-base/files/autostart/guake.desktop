@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Guake Terminal
+Comment=Dropdown Terminal
+Type=Application
+Categories=GNOME;Utility;
+Exec=guake
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
