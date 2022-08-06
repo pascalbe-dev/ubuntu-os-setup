@@ -13,6 +13,7 @@
     - vim
     - htop
     - xclip
+    - python3-pip
 - name: install standard ui productivity tools
   apt:
     name: "{{ item }}"
@@ -30,6 +31,22 @@
     - name: run the ulauncher installation
       apt:
         name: ulauncher
+    - name: install packages required for ulauncher extensions
+      block:
+        - name: install mlocate (for the chrome bookmarks extension)
+          apt:
+            name: mlocate
+        - name: install todoist-python (for the todoist extension)
+          pip:
+            name: todoist-python
+    - name: configure ulauncher
+      become: false
+      copy:
+        src: configuration/ulauncher/{{ item }}.json
+        dest: "{{ lookup('env', 'HOME') }}/.config/ulauncher/"
+      loop:
+        - settings
+        - extensions
 - name: autostart productivity tools
   become: false
   copy:
