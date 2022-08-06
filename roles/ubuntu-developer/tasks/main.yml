@@ -22,6 +22,11 @@
         - nx
         - firebase-tools
     - name: install vscode
+      become: true
       community.general.snap:
         name: code-insiders
         classic: yes
+# TODO:
+# - ssh key
+# - filesystem stuff
+# -
