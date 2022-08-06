@@ -41,6 +41,14 @@
         - name: run the oh my zsh installation
           shell: "bash {{ lookup('env', 'HOME') }}/.installers/ohmyzsh/install.sh"
           when: ohmyzsh_installer.changed
+        - name: configure oh my zsh
+          copy:
+            src: "configuration/ohmyzsh/{{ item }}.sh"
+            dest: "{{ lookup('env', 'HOME') }}/{{ item }}"
+          loop:
+            - .zshenv
+            - .zshaliases
+            - .zshrc
     - name: install ulauncher
       block:
         - name: add ulauncher apt repo
