@@ -5,7 +5,10 @@
       become: false
       block:
         - name: run the nvm installation
-          shell: >
-            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+          shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
           args:
             creates: "{{ lookup('env', 'HOME') }}/.nvm/nvm.sh"
+          register: nvm_installation
+        - name: install the latest LTS version
+          shell: nvm install --lts
+          when: nvm_installation.changed

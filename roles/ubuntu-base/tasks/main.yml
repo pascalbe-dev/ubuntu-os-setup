@@ -29,18 +29,11 @@
     - name: install oh my zsh
       become: false
       block:
-        - name: ensure the directory for the installer exists
-          file:
-            path: "{{ lookup('env', 'HOME') }}/.installers/ohmyzsh/"
-            state: directory
-        - name: download the installer
-          get_url:
-            url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-            dest: "{{ lookup('env', 'HOME') }}/.installers/ohmyzsh/"
-          register: ohmyzsh_installer
         - name: run the oh my zsh installation
-          shell: "bash {{ lookup('env', 'HOME') }}/.installers/ohmyzsh/install.sh"
-          when: ohmyzsh_installer.changed
+          shell: >
+            curl -o- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+          args:
+            creates: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/oh-my-zsh.sh"
         - name: configure oh my zsh
           block:
             - name: add extra configuration files
