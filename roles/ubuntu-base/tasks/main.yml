@@ -33,7 +33,7 @@
 - name: autostart productivity tools
   copy:
     src: autostart/{{ item }}.desktop
-    dest: /home/pascalbe/autostart/
+    dest: "{{ lookup('env', 'HOME') }}/autostart/"
   loop:
     - autokey
     - guake
