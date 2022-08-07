@@ -1,0 +1,169 @@
+---
+- name: add apt signing keys
+  apt_key:
+    url: "{{ item }}"
+  loop:
+    - https://dl.google.com/linux/linux_signing_key.pub
+- name: add apt repos
+  apt_repository:
+    repo: "{{ item }}"
+  loop:
+    - ppa:agornostal/ulauncher
+    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+- name: update packages cache
+  apt:
+    name: wget
+    update_cache: yes
+- name: install apt tools
+  apt:
+    name: "{{ item }}"
+  loop:
+    - zsh
+    - jq
+    - unzip
+    - curl
+    - vim
+    - htop
+    - xclip
+    - python3-pip
+    - mlocate
+    - guake
+    - autokey-gtk
+    - flameshot
+    - ulauncher
+    - peek
+    - dconf-editor
+    - google-chrome-stable
+- name: install pip tools
+  pip:
+    name: "{{ item }}"
+  loop:
+    - todoist-python
+- name: install snap tools
+  community.general.snap:
+    name: "{{ item }}"
+  loop:
+    - spotify
+    - teams
+    - mailspring
+- name: custom install tools
+  block:
+    - name: install oh my zsh
+      become: false
+      block:
+        - name: run the oh my zsh installation
+          shell: >
+            curl -o- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+          args:
+            creates: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/oh-my-zsh.sh"
+        - name: use the zsh as default shell
+          become: true
+          user:
+            # TODO: do not hardcode the username
+            name: pascalbe
+            shell: /bin/zsh
+          notify: log out
+- name: autostart tools
+  become: false
+  copy:
+    src: autostart/{{ item }}.desktop
+    dest: "{{ lookup('env', 'HOME') }}/autostart/"
+  loop:
+    - autokey
+    - guake
+    - ulauncher
+- name: configure tools
+  become: false
+  block:
+    - name: install configuration requirements
+      pip:
+        name: psutil
+    - name: run standard configurations
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - {
+            key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size",
+            value: "30",
+          }
+        - {
+            key: "/org/gnome/shell/extensions/dash-to-dock/dock-position",
+            value: "'BOTTOM'",
+          }
+        - {
+            key: "/org/gnome/desktop/interface/color-scheme",
+            value: "'prefer-dark'",
+          }
+        - {
+            key: "/org/gnome/desktop/interface/gtk-theme",
+            value: "'Yaru-dark'",
+          }
+        - {
+            key: "/org/gnome/shell/favorite-apps",
+            value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'teams_teams.desktop', 'code-insiders_code-insiders.desktop']",
+          }
+        - { key: "/apps/guake/general/window-height", value: "35" }
+        - {
+            key: "/apps/guake/style/font/palette",
+            value: "'#1C1C1D1D1919:#D0D01B1B2424:#A7A7D3D32C2C:#D8D8CFCF6767:#6161B8B8D0D0:#69695A5ABBBB:#D5D538386464:#FEFEFFFFFEFE:#1C1C1D1D1919:#D0D01B1B2424:#A7A7D3D32C2C:#D8D8CFCF6767:#6161B8B8D0D0:#69695A5ABBBB:#D5D538386464:#FEFEFFFFFEFE:#F6F6F5F5EEEE:#232325252626'",
+          }
+        - { key: "/apps/guake/style/font/palette-name", value: "'Monokai'" }
+        - { key: "/apps/guake/style/background/transparency", value: "90" }
+        - { key: "/apps/guake/keybindings/global/show-hide", value: "'F10'" }
+        - { key: "/apps/guake/keybindings/local/new-tab", value: "'<Alt>t'" }
+        - { key: "/apps/guake/keybindings/local/close-tab", value: "'<Alt>w'" }
+        - {
+            key: "/apps/guake/keybindings/local/previous-tab",
+            value: "'<Alt>Left'",
+          }
+        - {
+            key: "/apps/guake/keybindings/local/next-tab",
+            value: "'<Alt>Right'",
+          }
+        - {
+            key: "/apps/guake/keybindings/local/rename-current-tab",
+            value: "'<Alt>r'",
+          }
+        - {
+            key: "/apps/guake/keybindings/local/clipboard-copy",
+            value: "'<Alt>c'",
+          }
+        - {
+            key: "/apps/guake/keybindings/local/clipboard-paste",
+            value: "'<Alt>v'",
+          }
+    - name: configure ulauncher
+      copy:
+        src: configuration/ulauncher/{{ item }}.json
+        dest: "{{ lookup('env', 'HOME') }}/.config/ulauncher/"
+      loop:
+        - settings
+        - extensions
+    - name: configure oh my zsh
+      block:
+        - name: add extra configuration files
+          copy:
+            src: "configuration/ohmyzsh/{{ item }}.sh"
+            dest: "{{ lookup('env', 'HOME') }}/{{ item }}"
+          loop:
+            - .zshenv
+            - .zshaliases
+        - name: change zsh configuration
+          block:
+            - name: replace plugins
+              lineinfile:
+                path: "{{ lookup('env', 'HOME') }}/.zshrc"
+                regexp: "^plugins=(.*)"
+                line: plugins=(git globalias nvm)
+            - name: reference extra configuration files
+              lineinfile:
+                path: "{{ lookup('env', 'HOME') }}/.zshrc"
+                line: "source $HOME/{{ item }}"
+              loop:
+                - .zshenv
+                - .zshaliases
+    - name: configure chrome
+      lineinfile:
+        path: "{{ lookup('env', 'HOME') }}/.zshrc"
+        line: "export BROWSER=/usr/bin/google-chrome"

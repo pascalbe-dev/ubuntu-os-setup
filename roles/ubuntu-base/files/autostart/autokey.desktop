@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Autokey
+Comment=Text Snippet Expander
+Type=Application
+Categories=GNOME;Utility;
+Exec=autokey
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true

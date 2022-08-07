@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: true
+  roles:
+    - ubuntu-base
+    - ubuntu-developer-base
+    - ubuntu-developer-node
+    - ubuntu-developer-java

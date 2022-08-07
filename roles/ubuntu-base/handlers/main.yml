@@ -1,0 +1,4 @@
+---
+- name: log out
+  debug:
+    msg: Please log out and back in again to activate changes like the new default shell

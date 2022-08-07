@@ -1,0 +1,4 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Pascal Betting
+	email = pascal.betting@gmx.de

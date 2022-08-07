@@ -1,0 +1,27 @@
+---
+- name: install nvm and node
+  become: false
+  block:
+    - name: run the nvm installation
+      shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+      args:
+        creates: "{{ lookup('env', 'HOME') }}/.nvm/nvm.sh"
+      register: nvm_installation
+    # TODO: understand why that fails and fix it
+    - name: install the latest LTS version
+      shell: nvm install --lts
+      when: nvm_installation.changed
+- name: install npm packages
+  become: false
+  community.general.npm:
+    global: yes
+    name: "{{ item }}"
+  loop:
+    - "@angular/cli"
+    - nx
+    - firebase-tools
+- name: install vscode
+  become: true
+  community.general.snap:
+    name: code-insiders
+    classic: yes

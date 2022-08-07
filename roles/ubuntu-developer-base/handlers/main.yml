@@ -1,0 +1,7 @@
+---
+- name: re-read sysctl config
+  become: true
+  shell: sysctl -p
+- name: store public ssh key
+  debug:
+    msg: Take your public ssh key and add it to the systems you want to connect to with ssh (e.g. Github).

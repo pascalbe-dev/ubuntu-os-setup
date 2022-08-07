@@ -1,28 +1,27 @@
 # Ubuntu OS developer setup
 
-## Installation
-
-### Requirements:
+## Requirements
 
 - Ubuntu installation with Gnome and hard drive encryption (minimal installation is enough)
-- Git installed
 
-### Steps
+## Setup
 
-1. Clone the repository (into your home folder)
+- open a new terminal
+- copy and run this command: `wget -O - https://raw.githubusercontent.com/pascalbe-dev/ubuntu-os-setup/master/install.sh | bash`
 
-`git clone https://github.com/pascalbe-dev/ubuntu-os-setup.git`
+## Manual todos after the installation
 
-2. Cd into that folder
-
-`cd ubuntu-os-setup`
-
-3. Run the installation script
-
-`./install.sh`
-
-4. Log out and back in again
-
-## Todos after the installation
-
-- tbd...
+- login to the following tools
+  - Google chrome browser profiles
+  - MS teams
+  - Mailspring
+  - Spotify
+- copy your ssh key to the services you want to access (e.g. Github)
+- add your custom Autokey texts
+- clone the git repositories you need
+- sync the settings for the following tools
+  - VSCode
+  - Intellij IDEA
+- adjust the configuration the Ulauncher extensions
+  - todoist
+- adjust the display alignment if you are using multiple displays
