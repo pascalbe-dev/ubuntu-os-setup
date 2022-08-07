@@ -149,7 +149,6 @@
           loop:
             - .zshenv
             - .zshaliases
-            - .zshrc
         - name: change zsh configuration
           block:
             - name: replace plugins
