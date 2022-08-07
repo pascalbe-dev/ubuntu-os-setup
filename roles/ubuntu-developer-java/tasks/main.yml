@@ -1,7 +1,17 @@
 ---
-- name: todo
-  debug:
-    msg: todo
+- name: install apt tools
+  apt:
+    name: "{{ item }}"
+  loop:
+    - default-jdk
+    - openjdk-8-jdk
+    - maven
+- name: install snap tools
+  community.general.snap:
+    name: "{{ item }}"
+    classic: yes
+  loop:
+    - intellij-idea-community
 # TODO:
 # - ssh key
 # - git config
