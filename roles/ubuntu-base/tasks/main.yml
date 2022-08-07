@@ -45,6 +45,7 @@
   loop:
     - spotify
     - teams
+    - mailspring
 - name: custom install tools
   block:
     - name: install oh my zsh
@@ -163,3 +164,7 @@
               loop:
                 - .zshenv
                 - .zshaliases
+    - name: configure chrome
+      lineinfile:
+        path: "{{ lookup('env', 'HOME') }}/.zshrc"
+        line: "export BROWSER=/usr/bin/google-chrome"
