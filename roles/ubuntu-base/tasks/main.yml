@@ -44,6 +44,7 @@
     name: "{{ item }}"
   loop:
     - spotify
+    - teams
 - name: custom install tools
   block:
     - name: install oh my zsh
@@ -99,7 +100,7 @@
           }
         - {
             key: "/org/gnome/shell/favorite-apps",
-            value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'code-insiders_code-insiders.desktop']",
+            value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'teams_teams.desktop', 'code-insiders_code-insiders.desktop']",
           }
         - { key: "/apps/guake/general/window-height", value: "35" }
         - {
