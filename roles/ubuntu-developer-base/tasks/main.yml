@@ -10,8 +10,11 @@
   args:
     creates: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   notify: store public ssh key
+- name: configure git
+  copy:
+    src: configuration/git/.gitconfig
+    dest: "{{ lookup('env', 'HOME') }}/"
 # TODO:
-# - git config
 # - logins
 # - docker + compose
 # - java tools
