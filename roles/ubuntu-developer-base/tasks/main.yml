@@ -5,8 +5,12 @@
     path: /etc/sysctl.conf
     line: fs.inotify.max_user_watches=524288
   notify: re-read sysctl config
+- name: add ssh key
+  shell: "ssh-keygen -q -N '' -f {{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+  args:
+    creates: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+  notify: store public ssh key
 # TODO:
-# - ssh key
 # - git config
 # - logins
 # - docker + compose
