@@ -1,0 +1,4 @@
+---
+- name: re-read sysctl config
+  become: true
+  shell: sysctl -p

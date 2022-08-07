@@ -3,4 +3,6 @@
   become: true
   roles:
     - ubuntu-base
-    - ubuntu-developer
+    - ubuntu-developer-base
+    - ubuntu-developer-node
+    - ubuntu-developer-java

@@ -80,7 +80,6 @@
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
-      # TODO: move this to a separate location for better readability
       with_items:
         - {
             key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size",

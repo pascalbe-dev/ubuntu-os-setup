@@ -1,0 +1,22 @@
+---
+- name: configure ubuntu
+  become: true
+  lineinfile:
+    path: /etc/sysctl.conf
+    line: fs.inotify.max_user_watches=524288
+  notify: re-read sysctl config
+# TODO:
+# - ssh key
+# - git config
+# - favoriten, dark mode
+# - logins
+# - docker + compose
+# - java tools
+# - vpn
+# - team viewer
+# - flameshot config
+# - pull request script
+# - editorconfig
+# - intellij installation
+# - standard folder structure
+# - autokey texts
