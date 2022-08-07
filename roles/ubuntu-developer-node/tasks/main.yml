@@ -25,19 +25,3 @@
   community.general.snap:
     name: code-insiders
     classic: yes
-# TODO:
-# - ssh key
-# - git config
-# - filesystem stuff
-# - favoriten, dark mode
-# - logins
-# - docker + compose
-# - java tools
-# - vpn
-# - team viewer
-# - flameshot config
-# - pull request script
-# - editorconfig
-# - intellij installation
-# - standard folder structure
-# - autokey texts

@@ -27,11 +27,24 @@
     - work
     - community
     - tryout
+- name: add utility scripts
+  block:
+    - name: ensure utility scripts folder exists
+      file:
+        path: "{{ lookup('env', 'HOME') }}/.scripts/"
+        mode: u+x
+        state: directory
+    - name: copy utility scripts
+      copy:
+        src: utility-scripts/github-pull-request.sh
+        dest: "{{ lookup('env', 'HOME') }}/.scripts/"
+    - name: source utility scripts
+      lineinfile:
+        path: "{{ lookup('env', 'HOME') }}/.zshrc"
+        line: "export PATH=$PATH:{{ lookup('env', 'HOME') }}/.scripts/"
 # TODO:
 # - docker + compose
 # - vpn
 # - team viewer
 # - flameshot config
-# - pull request script
-# - autokey texts
 # - fix guake
