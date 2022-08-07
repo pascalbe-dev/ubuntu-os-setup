@@ -18,6 +18,15 @@
   copy:
     src: configuration/editors/.editorconfig
     dest: "{{ lookup('env', 'HOME') }}/"
+- name: generate standard repository folder structure
+  file:
+    path: "{{ lookup('env', 'HOME') }}/repos/{{ item }}/"
+    state: directory
+  loop:
+    - home
+    - work
+    - community
+    - tryout
 # TODO:
 # - logins
 # - docker + compose
@@ -27,5 +36,4 @@
 # - flameshot config
 # - pull request script
 # - intellij installation
-# - standard folder structure
 # - autokey texts
