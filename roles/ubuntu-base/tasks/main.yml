@@ -97,6 +97,10 @@
             key: "/org/gnome/desktop/interface/gtk-theme",
             value: "'Yaru-dark'",
           }
+        - {
+            key: "/org/gnome/shell/favorite-apps",
+            value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'code-insiders_code-insiders.desktop']",
+          }
         - { key: "/apps/guake/general/window-height", value: "35" }
         - {
             key: "/apps/guake/style/font/palette",
