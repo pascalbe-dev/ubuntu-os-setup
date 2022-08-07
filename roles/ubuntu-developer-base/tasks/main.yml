@@ -47,10 +47,3 @@
       lineinfile:
         path: "{{ lookup('env', 'HOME') }}/.zshrc"
         line: "export PATH=$PATH:{{ lookup('env', 'HOME') }}/.scripts/"
-# TODO:
-# - docker + compose
-# - vpn
-# - team viewer
-# - flameshot config
-# - fix guake
-# - make zshrc changes idempotent
