@@ -6,19 +6,23 @@
     line: fs.inotify.max_user_watches=524288
   notify: re-read sysctl config
 - name: add ssh key
+  become: false
   shell: "ssh-keygen -q -N '' -f {{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   args:
     creates: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   notify: store public ssh key
 - name: configure standard tools
+  become: false
   copy:
     src: configuration/git/.gitconfig
     dest: "{{ lookup('env', 'HOME') }}/"
 - name: configure editors
+  become: false
   copy:
     src: configuration/editors/.editorconfig
     dest: "{{ lookup('env', 'HOME') }}/"
 - name: generate standard repository folder structure
+  become: false
   file:
     path: "{{ lookup('env', 'HOME') }}/repos/{{ item }}/"
     state: directory
@@ -28,15 +32,16 @@
     - community
     - tryout
 - name: add utility scripts
+  become: false
   block:
     - name: ensure utility scripts folder exists
       file:
         path: "{{ lookup('env', 'HOME') }}/.scripts/"
-        mode: u+x
         state: directory
     - name: copy utility scripts
       copy:
         src: utility-scripts/github-pull-request.sh
+        mode: u+x
         dest: "{{ lookup('env', 'HOME') }}/.scripts/"
     - name: source utility scripts
       lineinfile:
