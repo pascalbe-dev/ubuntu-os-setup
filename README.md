@@ -26,3 +26,4 @@
 - adjust the configuration the Ulauncher extensions
   - todoist
 - adjust the display alignment if you are using multiple displays
+- adjust the mvn settings if you want to pull artifacts from private registries
