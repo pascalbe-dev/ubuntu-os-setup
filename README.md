@@ -11,6 +11,7 @@
 
 ## Manual todos after the installation
 
+- log out and back in again
 - login to the following tools
   - Google chrome browser profiles
   - MS teams
