@@ -26,7 +26,6 @@
     - htop
     - xclip
     - python3-pip
-    - mlocate
     - guake
     - autokey-gtk
     - flameshot

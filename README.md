@@ -3,6 +3,7 @@
 ## Requirements
 
 - Ubuntu installation with Gnome and hard drive encryption (minimal installation is enough)
+- Ubuntu version 22.04 (others might work too, but they are not tested)
 
 ## Setup
 
