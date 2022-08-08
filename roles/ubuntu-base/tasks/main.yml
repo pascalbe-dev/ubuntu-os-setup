@@ -108,16 +108,6 @@
             key: "/org/gnome/shell/favorite-apps",
             value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'teams_teams.desktop', 'code-insiders_code-insiders.desktop']",
           }
-        - key: "/org/gnome/shell/keybindings/show-screenshot-ui"
-          value: "['']"
-        - key: "/org/gnome/settings-daemon/plugins/media-keys"
-          value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
-        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybinding/custom0/binding"
-          value: "'Print'"
-        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybinding/custom0/command"
-          value: "'/usr/bin/flameshot gui'"
-        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybinding/custom0/name"
-          value: "'Screenshot'"
         - { key: "/apps/guake/general/window-height", value: "35" }
         - {
             key: "/apps/guake/style/font/palette",
