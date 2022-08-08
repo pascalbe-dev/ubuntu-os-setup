@@ -76,6 +76,10 @@
 - name: configure tools
   become: false
   block:
+    - name: change default applications
+      copy:
+        src: configuration/ubuntu/mimeapps.list
+        dest: "{{ lookup('env', 'HOME') }}/.config/"
     - name: install configuration requirements
       pip:
         name: psutil
@@ -168,7 +172,3 @@
               loop:
                 - .zshenv
                 - .zshaliases
-    - name: configure chrome
-      lineinfile:
-        path: "{{ lookup('env', 'HOME') }}/.zshrc"
-        line: "export BROWSER=/usr/bin/google-chrome"
