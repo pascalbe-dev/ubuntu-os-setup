@@ -172,3 +172,22 @@
               loop:
                 - .zshenv
                 - .zshaliases
+    - name: change decoration images
+      block:
+        - name: change profile picture
+          copy:
+            src: decoration/me/small.png
+            dest: "{{ lookup('env', 'HOME') }}/.face"
+        - name: add profile picture for other services
+          copy:
+            src: "decoration/me/{{ item }}"
+            dest: "{{ lookup('env', 'HOME') }}/Pictures/me/"
+          loop:
+            - small.png
+            - big.png
+        - name: add background images
+          copy:
+            src: "decoration/backgrounds/{{ item }}"
+            dest: "{{ lookup('env', 'HOME') }}/Pictures/backgrounds/"
+          loop:
+            - westpark.jpg
