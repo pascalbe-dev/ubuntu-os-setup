@@ -67,11 +67,12 @@
   become: false
   copy:
     src: autostart/{{ item }}.desktop
-    dest: "{{ lookup('env', 'HOME') }}/autostart/"
+    dest: "{{ lookup('env', 'HOME') }}/.config/autostart/"
   loop:
     - autokey
     - guake
     - ulauncher
+    - flameshot
 - name: configure tools
   become: false
   block:
