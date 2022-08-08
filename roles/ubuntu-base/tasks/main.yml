@@ -93,6 +93,10 @@
             value: "'BOTTOM'",
           }
         - {
+            key: "/org/gnome/desktop/wm/keybindings",
+            value: "['<Alt>numbersign']",
+          }
+        - {
             key: "/org/gnome/desktop/interface/color-scheme",
             value: "'prefer-dark'",
           }
