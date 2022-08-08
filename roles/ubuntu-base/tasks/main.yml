@@ -46,6 +46,7 @@
     - spotify
     - teams
     - mailspring
+    - todoist
 - name: custom install tools
   block:
     - name: install oh my zsh
