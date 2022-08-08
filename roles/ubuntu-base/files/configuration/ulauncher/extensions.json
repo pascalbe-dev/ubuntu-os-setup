@@ -83,11 +83,11 @@
     "last_commit": "006dae7b3b00e3c023a69b4b979a347b235b191a",
     "last_commit_time": "2021-06-17T05:35:52"
   },
-  "com.github.nortmas.chrome-bookmarks": {
-    "id": "com.github.nortmas.chrome-bookmarks",
-    "url": "https://github.com/nortmas/chrome-bookmarks.git",
-    "updated_at": "2022-03-06T10:26:28.173697",
-    "last_commit": "b4598ea1e208cd6feb49574e998721dcc771157f",
-    "last_commit_time": "2021-01-09T15:04:28"
+  "com.github.pascalbe-dev.chrome-bookmarks": {
+    "id": "com.github.pascalbe-dev.chrome-bookmarks",
+    "url": "https://github.com/pascalbe-dev/chrome-bookmarks",
+    "updated_at": "2022-08-08T10:41:58.427006",
+    "last_commit": "44c08da1be7517310490b8ffdd6b6837d107329e",
+    "last_commit_time": "2022-08-08T08:41:33"
   }
 }
