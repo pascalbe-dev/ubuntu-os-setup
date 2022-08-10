@@ -186,9 +186,8 @@ alias nxe='npm run affected:e2e'
 alias nxl='npm run affected:lint'
 alias nxt='npm run affected:test'
 alias nxgr='nx dep-graph'
-alias nxdf='nx g @angular-architects/ddd:feature --domain '
-alias nxdd='nx g @angular-architects/ddd:domain '
 alias nxgc='nx g @schematics/angular:component --project '
+alias nxw='npx create-nx-workspace'
 
 # open current directory in tools
 alias coc="background $COMMAND_VSCODE ."
