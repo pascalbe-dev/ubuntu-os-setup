@@ -91,6 +91,7 @@
         key: "{{ item.key }}"
         value: "{{ item.value }}"
       with_items:
+        # TODO: DO USE STANDARD YAML AND NOT THE JSON LIKE YAML
         - {
             key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size",
             value: "30",
