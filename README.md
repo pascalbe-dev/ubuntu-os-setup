@@ -14,11 +14,13 @@
 
 - log out and back in again
 - login to the following tools
+  - Gnome Online Accounts
   - Google chrome browser profiles
   - MS teams
   - Mailspring
   - Spotify
   - Todoist
+  - WhatsApp Web
 - copy your ssh key to the services you want to access (e.g. Github)
 - add your custom Autokey texts
 - clone the git repositories you need
