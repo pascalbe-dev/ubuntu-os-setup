@@ -34,6 +34,7 @@
     - ulauncher
     - peek
     - dconf-editor
+    - libreoffice
     - google-chrome-stable
     - microsoft-edge-stable
 - name: install pip tools
