@@ -1,4 +1,23 @@
 ---
+- name: add apt signing keys
+  apt_key:
+    url: "{{ item }}"
+  loop:
+    - https://packages.cloud.google.com/apt/doc/apt-key.gpg
+- name: add apt repos
+  apt_repository:
+    repo: "{{ item }}"
+  loop:
+    - "deb https://packages.cloud.google.com/apt cloud-sdk main"
+- name: update cache
+  apt:
+    name: wget
+    update_cache: yes
+- name: install apt tools
+  apt:
+    name: "{{ item }}"
+  loop:
+    - google-cloud-sdk
 - name: configure ubuntu
   become: true
   lineinfile:
@@ -31,11 +50,6 @@
     - work
     - community
     - tryout
-- name: install utility snap tools
-  become: true
-  community.general.snap:
-    name: google-cloud-cli
-    classic: yes
 - name: add utility scripts
   become: false
   block:
