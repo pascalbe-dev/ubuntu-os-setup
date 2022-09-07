@@ -18,6 +18,7 @@
     name: "{{ item }}"
   loop:
     - google-cloud-sdk
+    - google-cloud-sdk-config-connector
 - name: configure ubuntu
   become: true
   lineinfile:
