@@ -5,6 +5,7 @@
   loop:
     - default-jdk
     - openjdk-8-jdk
+    - openjdk-17-jdk
     - maven
 - name: install snap tools
   community.general.snap:

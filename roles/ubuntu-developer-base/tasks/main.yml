@@ -4,11 +4,13 @@
     url: "{{ item }}"
   loop:
     - https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    - https://download.docker.com/linux/ubuntu/gpg
 - name: add apt repos
   apt_repository:
     repo: "{{ item }}"
   loop:
     - "deb https://packages.cloud.google.com/apt cloud-sdk main"
+    - "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 - name: update cache
   apt:
     name: wget
@@ -19,6 +21,9 @@
   loop:
     - google-cloud-sdk
     - google-cloud-sdk-config-connector
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
 - name: configure ubuntu
   become: true
   lineinfile:
