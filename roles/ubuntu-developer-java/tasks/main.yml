@@ -13,3 +13,4 @@
     classic: yes
   loop:
     - intellij-idea-community
+    - intellij-idea-ultimate
