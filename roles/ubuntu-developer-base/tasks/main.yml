@@ -72,3 +72,12 @@
       lineinfile:
         path: "{{ lookup('env', 'HOME') }}/.zshrc"
         line: "export PATH=$PATH:{{ lookup('env', 'HOME') }}/.scripts/"
+- name: add user to required groups
+  become: true
+  block:
+    - name: add user to docker group
+      user:
+        # TODO: do not hardcode the username
+        name: pascalbe
+        groups: docker
+        append: yes
