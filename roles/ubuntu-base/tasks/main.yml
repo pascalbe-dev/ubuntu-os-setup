@@ -195,3 +195,9 @@
             dest: "{{ lookup('env', 'HOME') }}/Pictures/backgrounds/"
           loop:
             - westpark.jpg
+- name: add localhorst entry ;-)
+  become: true
+  lineinfile:
+    state: present
+    path: "/etc/hosts"
+    line: "127.0.0.1			localhorst"
