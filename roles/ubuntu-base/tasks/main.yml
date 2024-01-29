@@ -157,7 +157,7 @@
               lineinfile:
                 path: "{{ lookup('env', 'HOME') }}/.zshrc"
                 regexp: "^plugins=(.*)"
-                line: plugins=(git globalias nvm)
+                line: plugins=(git globalias)
             - name: reference extra configuration files
               lineinfile:
                 path: "{{ lookup('env', 'HOME') }}/.zshrc"
