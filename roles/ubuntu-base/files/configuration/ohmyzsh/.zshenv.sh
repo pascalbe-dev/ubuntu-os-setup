@@ -5,3 +5,5 @@ export DIRECTORY_1="$HOME/repos/work/"
 export COMMAND_VSCODE="code-insiders"
 export COMMAND_FINDER="xdg-open"
 export COMMAND_BROWSER_OPEN="google-chrome --app-url"
+
+export GITHUB_USER_1="pascalbe-dev"
