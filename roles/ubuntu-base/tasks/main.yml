@@ -25,7 +25,6 @@
     - vim
     - htop
     - xclip
-    - python3-pip
     - guake
     - autokey-gtk
     - flameshot
