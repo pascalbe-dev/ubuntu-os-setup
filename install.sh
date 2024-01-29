@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
+echo "Updating apt cache..."
+sudo apt update
+
 echo "Installing required packages..."
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install -y \
     git \
     ansible
