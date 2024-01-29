@@ -20,8 +20,3 @@
     - nx
     - firebase-tools
     - gatsby-cli
-- name: install vscode
-  become: true
-  community.general.snap:
-    name: code-insiders
-    classic: yes

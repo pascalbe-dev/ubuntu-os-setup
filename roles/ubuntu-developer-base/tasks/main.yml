@@ -24,6 +24,11 @@
     - docker-ce
     - docker-ce-cli
     - containerd.io
+- name: install snap tools
+  become: true
+  community.general.snap:
+    name: code-insiders
+    classic: yes
 - name: configure ubuntu
   become: true
   lineinfile:
