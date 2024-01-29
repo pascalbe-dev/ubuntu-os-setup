@@ -4,14 +4,12 @@
     url: "{{ item }}"
   loop:
     - https://dl.google.com/linux/linux_signing_key.pub
-    - https://packages.microsoft.com/keys/microsoft.asc
 - name: add apt repos
   apt_repository:
     repo: "{{ item }}"
   loop:
     - ppa:agornostal/ulauncher
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main"
 - name: update packages cache
   apt:
     name: wget
@@ -32,24 +30,15 @@
     - autokey-gtk
     - flameshot
     - ulauncher
-    - peek
     - dconf-editor
     - libreoffice
     - google-chrome-stable
-    - microsoft-edge-stable
-- name: install pip tools
-  pip:
-    name: "{{ item }}"
-  loop:
-    - todoist-python
 - name: install snap tools
   community.general.snap:
     name: "{{ item }}"
   loop:
     - spotify
-    - teams
     - mailspring
-    - todoist
 - name: custom install tools
   block:
     - name: install oh my zsh
@@ -115,7 +104,7 @@
           }
         - {
             key: "/org/gnome/shell/favorite-apps",
-            value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'teams_teams.desktop', 'code-insiders_code-insiders.desktop', 'todoist_todoist.desktop']",
+            value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'code-insiders_code-insiders.desktop']",
           }
         - { key: "/apps/guake/general/window-height", value: "35" }
         - {

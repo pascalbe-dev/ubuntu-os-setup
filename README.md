@@ -19,19 +19,17 @@
 
 - log out and back in again
 - login to the following tools
-  - Gnome Online Accounts
+  - Gnome Online Accounts (for calendar, ...)
   - Google chrome browser profiles
-  - MS teams
   - Mailspring
   - Spotify
-  - Todoist
   - WhatsApp Web
 - copy your ssh key to the services you want to access (e.g. Github)
 - add your custom Autokey texts
 - clone the git repositories you need
 - sync the settings for the following tools
   - VSCode
-  - Intellij IDEA
+  - Intellij
 - adjust the configuration the Ulauncher extensions
   - todoist
 - adjust the display alignment if you are using multiple displays
