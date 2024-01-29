@@ -10,13 +10,3 @@
     - name: install the latest LTS version
       shell: nvm install --lts
       when: nvm_installation.changed
-- name: install npm packages
-  become: false
-  community.general.npm:
-    global: yes
-    name: "{{ item }}"
-  loop:
-    - "@angular/cli"
-    - nx
-    - firebase-tools
-    - gatsby-cli
