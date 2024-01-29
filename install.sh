@@ -5,6 +5,10 @@ sudo apt update
 
 echo "Installing required packages..."
 sudo apt install -y software-properties-common
+sudo add-apt-repository main
+sudo add-apt-repository universe
+sudo add-apt-repository restricted
+sudo add-apt-repository multiverse
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install -y \
     git \
