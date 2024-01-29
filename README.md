@@ -31,6 +31,7 @@
   - VSCode
   - Intellij
 - adjust the configuration the Ulauncher extensions
-  - todoist
+  - ulauncher-todoist-capture
+  - ulauncher-toggl
 - adjust the display alignment if you are using multiple displays
 - adjust the mvn settings if you want to pull artifacts from private registries

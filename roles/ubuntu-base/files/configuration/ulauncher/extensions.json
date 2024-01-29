@@ -6,20 +6,6 @@
     "last_commit": "4262fc24db08610d01ea311d2e12f22588c98886",
     "last_commit_time": "2020-11-03T07:21:30"
   },
-  "com.github.isacikgoz.ukill": {
-    "id": "com.github.isacikgoz.ukill",
-    "url": "https://github.com/isacikgoz/ukill",
-    "updated_at": "2021-01-04T13:32:19.239495",
-    "last_commit": "bc50d9f41d46b6813a5aeebddd15734dcdb9d8db",
-    "last_commit_time": "2019-05-28T18:30:00"
-  },
-  "com.github.manahter.ulauncher-translate": {
-    "id": "com.github.manahter.ulauncher-translate",
-    "url": "https://github.com/manahter/ulauncher-translate",
-    "updated_at": "2021-01-04T13:32:36.478380",
-    "last_commit": "38cf20f4621704b26a1e866d066ccb6a2acac5f2",
-    "last_commit_time": "2020-11-21T21:26:56"
-  },
   "com.github.ulauncher.ulauncher-emoji": {
     "id": "com.github.ulauncher.ulauncher-emoji",
     "url": "https://github.com/Ulauncher/ulauncher-emoji",
@@ -33,13 +19,6 @@
     "updated_at": "2021-01-04T13:36:12.000364",
     "last_commit": "9268d22afd93748821164e12f806b049533fc873",
     "last_commit_time": "2020-12-08T21:03:45"
-  },
-  "com.github.ceroprogramming.ulauncher-pulsecontrol": {
-    "id": "com.github.ceroprogramming.ulauncher-pulsecontrol",
-    "url": "https://github.com/CeroProgramming/ulauncher-pulsecontrol",
-    "updated_at": "2021-01-04T13:39:16.208245",
-    "last_commit": "764a8b11202ce55dd574fec10ab447601958ed29",
-    "last_commit_time": "2020-11-27T15:56:19"
   },
   "com.github.friday.ulauncher-gnome-settings": {
     "id": "com.github.friday.ulauncher-gnome-settings",
@@ -55,39 +34,32 @@
     "last_commit": "2fbb70fd2af246277b2baff03465bc8bd971c85f",
     "last_commit_time": "2021-01-14T04:26:08"
   },
-  "com.github.cmuench.ulauncher-todoist": {
-    "id": "com.github.cmuench.ulauncher-todoist",
-    "url": "https://github.com/cmuench/ulauncher-todoist",
-    "updated_at": "2021-04-05T11:41:44.755379",
-    "last_commit": "a91405f01524bbbb14f52dd3f96cd6e202112f89",
-    "last_commit_time": "2021-04-05T09:32:23"
+  "com.github.pascalbe-dev.ulauncher-toggl": {
+    "id": "com.github.pascalbe-dev.ulauncher-toggl",
+    "url": "https://github.com/pascalbe-dev/ulauncher-toggl.git",
+    "updated_at": "2024-01-29T10:18:30.735254",
+    "last_commit": "67e9904ed5982e275f146af7ef61700b4b49265f",
+    "last_commit_time": "2024-01-29T09:17:43"
   },
-  "com.github.rkarami.ulauncher-password-generator": {
-    "id": "com.github.rkarami.ulauncher-password-generator",
-    "url": "https://github.com/rkarami/ulauncher-password-generator",
-    "updated_at": "2021-06-18T07:56:20.330153",
-    "last_commit": "dd835041f81a0821e6398d3ab817847d93af615f",
-    "last_commit_time": "2019-09-27T21:34:17"
-  },
-  "com.github.rabin-io.ulauncher-nm": {
-    "id": "com.github.rabin-io.ulauncher-nm",
-    "url": "https://github.com/rabin-io/ulauncher-nm",
-    "updated_at": "2021-09-16T17:46:32.041096",
-    "last_commit": "9a3682584893a7bee11bee43188ca03e47577567",
-    "last_commit_time": "2020-06-19T12:32:51"
+  "com.github.pascalbe-dev.ulauncher-todoist-capture": {
+    "id": "com.github.pascalbe-dev.ulauncher-todoist-capture",
+    "url": "https://github.com/pascalbe-dev/ulauncher-todoist-capture.git",
+    "updated_at": "2024-01-29T10:18:44.448591",
+    "last_commit": "fa5c969cac234269236cfdae9362e5132971deaa",
+    "last_commit_time": "2024-01-29T09:17:09"
   },
   "com.github.pascalbe-dev.ulauncher-repo-opener": {
     "id": "com.github.pascalbe-dev.ulauncher-repo-opener",
     "url": "https://github.com/pascalbe-dev/ulauncher-repo-opener.git",
-    "updated_at": "2022-03-06T10:25:51.371089",
-    "last_commit": "006dae7b3b00e3c023a69b4b979a347b235b191a",
-    "last_commit_time": "2021-06-17T05:35:52"
+    "updated_at": "2024-01-29T10:18:20.120407",
+    "last_commit": "e72ec2961270c32d5b15192abbfc77020f37bbcc",
+    "last_commit_time": "2024-01-29T09:18:00"
   },
-  "com.github.pascalbe-dev.chrome-bookmarks": {
-    "id": "com.github.pascalbe-dev.chrome-bookmarks",
-    "url": "https://github.com/pascalbe-dev/chrome-bookmarks",
-    "updated_at": "2022-08-08T10:41:58.427006",
-    "last_commit": "44c08da1be7517310490b8ffdd6b6837d107329e",
-    "last_commit_time": "2022-08-08T08:41:33"
+  "com.github.pascalbe-dev.ulauncher-browser-bookmarks": {
+    "id": "com.github.pascalbe-dev.ulauncher-browser-bookmarks",
+    "url": "https://github.com/pascalbe-dev/ulauncher-browser-bookmarks.git",
+    "updated_at": "2024-01-29T10:15:57.192479",
+    "last_commit": "41d27644e4e5c9148073449d04a1d1bfbbf3a59c",
+    "last_commit_time": "2024-01-29T09:13:32"
   }
 }
