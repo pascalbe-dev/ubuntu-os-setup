@@ -29,7 +29,7 @@
 - clone the git repositories you need
 - sync the settings for the following tools
   - [VSCode](./docs/sync-vscode-settings.md)
-  - Intellij
+  - [Intellij](./docs/sync-intellij-settings.md)
 - adjust the configuration the Ulauncher extensions
   - ulauncher-todoist-capture
   - ulauncher-toggl
