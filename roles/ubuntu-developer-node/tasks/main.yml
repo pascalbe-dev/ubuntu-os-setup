@@ -2,5 +2,9 @@
 - name: install node version management and the node LTS
   become: false
   block:
-    - name: install node version management tooling
-      shell: echo "TODO"
+    - name: install volta
+      shell: curl https://get.volta.sh | bash
+      args:
+        creates: "{{ lookup('env', 'HOME') }}/.volta/bin/volta"
+    - name: install node LTS
+      shell: volta install node@lts
