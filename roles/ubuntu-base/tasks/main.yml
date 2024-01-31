@@ -32,6 +32,8 @@
     - dconf-editor
     - libreoffice
     - google-chrome-stable
+    # used to make adjustments to the dconf settings
+    - python3-psutil
 - name: install snap tools
   community.general.snap:
     name: "{{ item }}"
@@ -72,9 +74,6 @@
       copy:
         src: configuration/ubuntu/mimeapps.list
         dest: "{{ lookup('env', 'HOME') }}/.config/"
-    - name: install configuration requirements
-      pip:
-        name: psutil
     - name: run standard configurations
       dconf:
         key: "{{ item.key }}"
