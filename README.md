@@ -28,7 +28,7 @@
 - add your custom Autokey texts
 - clone the git repositories you need
 - sync the settings for the following tools
-  - VSCode
+  - [VSCode](./docs/sync-vscode-settings.md)
   - Intellij
 - adjust the configuration the Ulauncher extensions
   - ulauncher-todoist-capture
