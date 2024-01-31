@@ -148,6 +148,7 @@
             dest: "{{ lookup('env', 'HOME') }}/{{ item }}"
           loop:
             - .zshaliases
+            - .zshenv
         - name: change zsh configuration
           block:
             - name: replace plugins
