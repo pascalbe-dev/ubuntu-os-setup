@@ -18,6 +18,7 @@
 ## Manual todos after the installation
 
 - log out and back in again
+- adjust the display alignment if you are using multiple displays
 - login to the following tools
   - Gnome Online Accounts (for calendar, ...)
   - Google chrome browser profiles
@@ -33,5 +34,5 @@
 - adjust the configuration the Ulauncher extensions
   - ulauncher-todoist-capture
   - ulauncher-toggl
-- adjust the display alignment if you are using multiple displays
 - adjust the mvn settings if you want to pull artifacts from private registries
+- use the wallpaper from the pictures
