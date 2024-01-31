@@ -22,8 +22,6 @@
     - google-cloud-sdk
     - google-cloud-sdk-config-connector
     - docker-ce
-    - docker-ce-cli
-    - containerd.io
 - name: install snap tools
   become: true
   community.general.snap:
