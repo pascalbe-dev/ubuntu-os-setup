@@ -53,8 +53,7 @@
         - name: use the zsh as default shell
           become: true
           user:
-            # TODO: do not hardcode the username
-            name: pascalbe
+            name: "{{ lookup('env', 'USERNAME') }}"
             shell: /bin/zsh
           notify: log out
 - name: autostart tools
