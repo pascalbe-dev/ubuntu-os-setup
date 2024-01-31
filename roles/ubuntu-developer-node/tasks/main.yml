@@ -7,4 +7,4 @@
       args:
         creates: "{{ lookup('env', 'HOME') }}/.volta/bin/volta"
     - name: install node LTS
-      shell: volta install node@lts
+      shell: ~/.volta/bin/volta install node@lts
