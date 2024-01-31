@@ -133,6 +133,20 @@
             key: "/apps/guake/keybindings/local/clipboard-paste",
             value: "'<Alt>v'",
           }
+        - key: "/org/gnome/desktop/wm/keybindings/activate-window-menu"
+          value: "@as []"
+        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
+          value: "'F10'"
+        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
+          value: "'guake-toggle'"
+        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
+          value: "'guake'"
+        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
+          value: "'<Alt>space'"
+        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command"
+          value: "'ulauncher-toggle'"
+        - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name"
+          value: "'ulauncher'"
     - name: configure ulauncher
       copy:
         src: configuration/ulauncher/{{ item }}.json
