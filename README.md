@@ -25,6 +25,7 @@
   - Mailspring
   - Spotify
   - WhatsApp Web
+  - Slack
 - copy your ssh key to the services you want to access (e.g. Github)
 - add your custom Autokey texts
 - clone the git repositories you need

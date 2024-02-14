@@ -40,6 +40,7 @@
   loop:
     - spotify
     - mailspring
+    - slack
 - name: custom install tools
   block:
     - name: install oh my zsh
