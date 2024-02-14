@@ -101,7 +101,7 @@
             value: "'Yaru-dark'",
           }
         - key: "/org/gnome/shell/favorite-apps"
-          value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'code-insiders_code-insiders.desktop', 'intellij-idea-ultimate_intellij-idea-ultimate.desktop']"
+          value: "['google-chrome.desktop', 'spotify_spotify.desktop', 'slack_slack.desktop', 'intellij-idea-ultimate_intellij-idea-ultimate.desktop', 'code-insiders_code-insiders.desktop']"
         - { key: "/apps/guake/general/window-height", value: "35" }
         - {
             key: "/apps/guake/style/font/palette",
