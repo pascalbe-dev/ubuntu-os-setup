@@ -21,6 +21,7 @@
     - zsh
     - jq
     - unzip
+    - net-tools
     - curl
     - vim
     - htop
