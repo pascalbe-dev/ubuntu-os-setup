@@ -1,0 +1,17 @@
+---
+- name: install terraform
+  block:
+    - name: add apt signing keys
+      apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+    - name: add apt repos
+      apt_repository:
+        # TO NOTE: the ubuntu version code is hardcoded
+        repo: "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com jammy main"
+    - name: update cache
+      apt:
+        name: wget
+        update_cache: yes
+    - name: install apt tool
+      apt:
+        name: terraform
