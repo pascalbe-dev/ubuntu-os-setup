@@ -69,10 +69,12 @@ alias grc='git reset HEAD~1'
 alias gccl='git rev-parse HEAD'
 # special commits
 alias gvc='git add --all && git commit -m "version: use latest version"'
+# git main branch clean
+alias gmb="git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
+alias gdc='gfa && git checkout $(gmb) && git pull'
 
 # github
-alias gpr1='github-pull-request.sh $GITHUB_USER_1 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
-alias gpr2='github-pull-request.sh $GITHUB_USER_2 $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
+alias gpr='github-pull-request.sh $(basename $(dirname $PWD)) $(git rev-parse --show-toplevel | rev | cut -d'/' -f 1 | rev) $(git rev-parse --abbrev-ref HEAD)'
 
 # UI (ubuntu)
 alias dils='xrandr -d :0 -q'
