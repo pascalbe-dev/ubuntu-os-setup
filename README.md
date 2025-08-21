@@ -8,12 +8,18 @@
 ## Setup
 
 - open a new terminal
-- copy and run this command: `wget -O - https://raw.githubusercontent.com/pascalbe-dev/ubuntu-os-setup/master/install.sh | bash`
+- run this command:
+```bash
+wget -O - https://raw.githubusercontent.com/pascalbe-dev/ubuntu-os-setup/master/install.sh | bash
+```
 
 ## Update after changes
 
 - open a new terminal
-- copy and run this command: `ansible-playbook developer-ubuntu.yml --ask-become-pass`
+- run this command: 
+```bash
+ansible-playbook developer-ubuntu.yml --ask-become-pass
+```
 
 ## Manual todos after the installation
 
