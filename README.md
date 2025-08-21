@@ -26,7 +26,7 @@ ansible-playbook developer-ubuntu.yml --ask-become-pass
 - log out and back in again
 - adjust the display alignment if you are using multiple displays
 - login to the following tools
-  - Google chrome browser profiles
+  - Google Chrome browser profiles
   - Spotify
   - WhatsApp Web
   - Slack
