@@ -42,6 +42,7 @@
   loop:
     - spotify
     - slack
+    - keepassxc
 - name: custom install tools
   block:
     - name: install oh my zsh
