@@ -152,6 +152,7 @@ alias mvsr='mvn spring-boot:run'
 alias mvsrl='mvn spring-boot:run -Dspring-boot.run.profiles=local'
 alias mvdt='mvn dependency:tree'
 alias mves="$COMMAND_INTELLIJ $HOME/.m2/settings.xml"
+alias mvar='mvn appengine:run -P local'
 
 # java
 alias jjh='java -jar target/*.jar'
