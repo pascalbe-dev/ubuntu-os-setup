@@ -30,6 +30,9 @@ alias t10='for t in {1..10}; do ""; done'
 alias t50='for t in {1..50}; do ""; done'
 alias eho='sudo vim /etc/hosts'
 
+# gcloud
+alias gcll='gcloud auth login --update-adc'
+
 
 # package installation
 alias ain='sudo apt install -y '
