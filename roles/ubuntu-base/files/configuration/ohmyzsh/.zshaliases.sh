@@ -126,8 +126,8 @@ alias dvh='docker run -u $(id -u ${USER}):$(id -g ${USER})  -d --rm --name ${PWD
 alias dvhe='docker run -u $(id -u ${USER}):$(id -g ${USER}) -i -t --rm --name ${PWD##*/} -p 9080:9080 -p 9443:9443 -p 9043:9043 -p 9060:9060 -p 8080:8080 -p 8443:8443 -p 7777:7777 -v $(pwd):/tmp/mapped '
 
 # docker compose
-alias dcd='docker compose down'
-alias dcu='docker compose up -d'
+alias dcd='docker compose -f $(find . | grep compose.yaml | head -1) down'
+alias dcu='docker compose -f $(find . | grep compose.yaml | head -1) up -d'
 alias dcur='docker compose up -d --force-recreate'
 
 # maven
