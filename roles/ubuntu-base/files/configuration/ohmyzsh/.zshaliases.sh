@@ -1,7 +1,7 @@
 # zsh
 alias oms='vim ~/.zshaliases'
 alias ome='vim ~/.zshenv'
-alias omc="$COMMAND_VSCODE $HOME/ubuntu-os-setup"
+alias omc="$COMMAND_INTELLIJ $HOME/ubuntu-os-setup"
 # reset shell (after changing aliases or stuff like that)
 alias res='exec zsh -l && clear'
 
@@ -144,7 +144,7 @@ alias mvf='mvn com.coveo:fmt-maven-plugin:format'
 alias mvsr='mvn spring-boot:run'
 alias mvsrl='mvn spring-boot:run -Dspring-boot.run.profiles=local'
 alias mvdt='mvn dependency:tree'
-alias mves="$COMMAND_VSCODE $HOME/.m2/settings.xml"
+alias mves="$COMMAND_INTELLIJ $HOME/.m2/settings.xml"
 
 # java
 alias jjh='java -jar target/*.jar'
@@ -190,7 +190,6 @@ alias nxgc='nx g @schematics/angular:component --project '
 alias nxw='npx create-nx-workspace'
 
 # open current directory in tools
-alias coc="background $COMMAND_VSCODE ."
 alias fic="background $COMMAND_FINDER ."
 alias inc="background $COMMAND_INTELLIJ ."
 

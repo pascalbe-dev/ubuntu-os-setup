@@ -20,7 +20,6 @@
 - log out and back in again
 - adjust the display alignment if you are using multiple displays
 - login to the following tools
-  - Gnome Online Accounts (for calendar, ...)
   - Google chrome browser profiles
   - Spotify
   - WhatsApp Web
@@ -29,7 +28,6 @@
 - add your custom Autokey texts
 - clone the git repositories you need
 - sync the settings for the following tools
-  - [VSCode](./docs/sync-vscode-settings.md)
   - [Intellij](./docs/sync-intellij-settings.md)
 - adjust the configuration the Ulauncher extensions
   - ulauncher-todoist-capture
