@@ -22,7 +22,6 @@
 - login to the following tools
   - Gnome Online Accounts (for calendar, ...)
   - Google chrome browser profiles
-  - Mailspring
   - Spotify
   - WhatsApp Web
   - Slack

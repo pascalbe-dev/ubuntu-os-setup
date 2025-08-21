@@ -41,7 +41,6 @@
     name: "{{ item }}"
   loop:
     - spotify
-    - mailspring
     - slack
 - name: custom install tools
   block:
