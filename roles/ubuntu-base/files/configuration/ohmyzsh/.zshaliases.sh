@@ -34,6 +34,8 @@ alias eho='sudo vim /etc/hosts'
 
 # gcloud
 alias gcll='gcloud auth login --update-adc'
+alias gcp1='gcloud config set project $GCLOUD_PROJECT_1 && gcloud auth application-default set-quota-project $GCLOUD_PROJECT_1'
+alias gcp2='gcloud config set project $GCLOUD_PROJECT_2 && gcloud auth application-default set-quota-project $GCLOUD_PROJECT_2'
 
 
 # package installation
