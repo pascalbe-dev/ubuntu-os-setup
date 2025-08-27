@@ -184,6 +184,8 @@ alias nli='npm run lint'
 alias ne2='npm run e2e'
 alias nde='npm run deploy'
 alias nfo='npm run format'
+# chrome debug
+alias chde='background google-chrome-stable --remote-debugging-port=9222 --user-data-dir="$HOME/.local-testing"'
 
 # angular
 alias ngcl='rm -rf package-lock.json && rm -rf node_modules && rm -rf dist'
