@@ -33,9 +33,9 @@ alias t50='for t in {1..50}; do ""; done'
 alias eho='sudo vim /etc/hosts'
 
 # gcloud
-alias gcll='gcloud auth login --update-adc'
-alias gcp1='gcloud config set project $GCLOUD_PROJECT_1 && gcloud auth application-default set-quota-project $GCLOUD_PROJECT_1'
-alias gcp2='gcloud config set project $GCLOUD_PROJECT_2 && gcloud auth application-default set-quota-project $GCLOUD_PROJECT_2'
+alias gcll='gcloud config unset project && gcloud config unset billing/quota_project && gcloud auth application-default revoke && gcloud auth revoke && gcloud auth login --update-adc'
+alias gcp1='gcloud config set project $GCLOUD_PROJECT_1 && gcloud auth application-default set-quota-project $GCLOUD_PROJECT_1 && gcloud config set billing/quota_project $GCLOUD_PROJECT_1'
+alias gcp2='gcloud config set project $GCLOUD_PROJECT_2 && gcloud auth application-default set-quota-project $GCLOUD_PROJECT_2 && gcloud config set billing/quota_project $GCLOUD_PROJECT_2'
 
 
 # package installation
