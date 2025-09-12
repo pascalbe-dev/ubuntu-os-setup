@@ -219,6 +219,7 @@ alias -g dir='$HOME/repos/'
 alias -g dic='$HOME/Documents/'
 alias -g dit='/tmp'
 alias -g dio='$OLDPWD'
+alias -g WC='| wc -l'
 
 # special directories
 alias d1='cd $DIRECTORY_1'
