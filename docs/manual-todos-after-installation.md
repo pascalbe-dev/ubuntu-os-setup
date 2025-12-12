@@ -19,3 +19,4 @@
   - ulauncher-toggl
 - adjust the mvn settings if you want to pull artifacts from private registries
 - use the wallpaper from the pictures
+- install cursor AI manually via [their website](https://cursor.com/download)
