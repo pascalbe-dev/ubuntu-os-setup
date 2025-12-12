@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Ubuntu installation with Gnome and hard drive encryption (minimal installation is enough)
+- Ubuntu installation as installed [here](./docs/setup-ubuntu.md)
 - Ubuntu version 24.04 (others might work too, but they are not tested)
 
 ## Setup
