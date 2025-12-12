@@ -1,0 +1,21 @@
+# Manual todos after installation
+
+- log out and back in again
+- adjust the display alignment if you are using multiple displays
+- pull in KeePass files
+- login to the following tools
+  - Google Chrome browser profiles
+  - Spotify
+  - WhatsApp Web
+  - Slack
+- connect the bluetooth headset (long press on the bluetooth headset)
+- copy your ssh key to the services you want to access (e.g. Github)
+- add your custom Autokey texts
+- clone the git repositories you need
+- sync the settings for the following tools
+  - [Intellij](./docs/sync-intellij-settings.md)
+- adjust the configuration the Ulauncher extensions
+  - ulauncher-todoist-capture
+  - ulauncher-toggl
+- adjust the mvn settings if you want to pull artifacts from private registries
+- use the wallpaper from the pictures
